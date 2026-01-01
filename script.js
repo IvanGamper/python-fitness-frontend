@@ -1,7 +1,8 @@
 const btn = document.getElementById("testBtn");
 const output = document.getElementById("output");
 
-const BACKEND_URL = "https://ivangamper.github.io/python-fitness-frontend/";
+const BACKEND_URL = "https://python-fitness-backend.onrender.com\n" +
+    "\n";
 
 btn.addEventListener("click", async () => {
     output.textContent = "Backend wird kontaktiert...";
