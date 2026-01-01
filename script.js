@@ -1,8 +1,7 @@
 const btn = document.getElementById("testBtn");
 const output = document.getElementById("output");
 
-const BACKEND_URL = "https://python-fitness-backend.onrender.com\n" +
-    "\n";
+const BACKEND_URL = "https://python-fitness-backend.onrender.com";
 
 btn.addEventListener("click", async () => {
     output.textContent = "Backend wird kontaktiert...";
@@ -10,7 +9,6 @@ btn.addEventListener("click", async () => {
     try {
         const response = await fetch(BACKEND_URL);
         const data = await response.json();
-
         output.textContent = JSON.stringify(data, null, 2);
     } catch (error) {
         output.textContent = "❌ Fehler beim Verbinden mit dem Backend";
