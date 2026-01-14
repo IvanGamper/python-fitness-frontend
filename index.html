@@ -51,10 +51,42 @@
 <section>
     <h2>🧠 Übungen (aus dem Backend)</h2>
 
-    <div id="output">
-        <!-- Hier schreibt script.js rein -->
+    <div id="exercise-form">
+        <input
+                type="text"
+                id="titleInput"
+                placeholder="Übungsname"
+        >
+
+        <input
+                type="text"
+                id="categoryInput"
+                placeholder="Kategorie (z. B. Mobility)"
+        >
+
+        <button id="addBtn">➕ Übung hinzufügen</button>
     </div>
+
+    <div id="output"></div>
+
 </section>
+
+<section>
+    <h2>📥 Kostenloser Download</h2>
+
+    <form id="signup-form">
+        <input
+                type="email"
+                id="email"
+                placeholder="E-Mail-Adresse"
+                required
+        >
+        <button type="submit">PDF anfordern</button>
+    </form>
+
+    <div id="download-area"></div>
+</section>
+
 
 <footer>
     <p>⚠️ Kein Ersatz für medizinische Beratung.</p>
