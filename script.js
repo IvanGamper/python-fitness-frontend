@@ -14,6 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleInput = document.getElementById("titleInput");
     const categoryInput = document.getElementById("categoryInput");
 
+    const toggle = document.getElementById("nav-toggle");
+    const panel = document.getElementById("nav-panel");
+
+    if (toggle && panel) {
+        toggle.addEventListener("click", () => {
+            panel.classList.toggle("open");
+        });
+    }
+
+
     // ===============================
     // Backend testen
     // ===============================
