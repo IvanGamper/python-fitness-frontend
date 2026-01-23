@@ -44,9 +44,11 @@ button {
    ========================= */
 
 .hero-nav {
-    text-align: center;
-    margin: 2rem 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
 }
+
 
 #nav-toggle {
     font-size: 1.2rem;
