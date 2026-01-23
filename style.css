@@ -58,21 +58,19 @@ button {
     border-radius: 30px;
 }
 
-/* Panel */
+/* Panel – standardmäßig ZU */
 #nav-panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
+    display: none;
     margin-top: 1.5rem;
-    display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-/* Offener Zustand */
+/* Panel – OFFEN */
 #nav-panel.open {
-    max-height: 400px;
+    display: flex;
 }
+
 
 #nav-panel a {
     font-size: 1.4rem;
