@@ -1,5 +1,5 @@
 // ===============================
-// Konfiguration
+// Konfigurationn
 // ===============================
 const BACKEND_URL = "https://python-fitness-backend.onrender.com";
 
