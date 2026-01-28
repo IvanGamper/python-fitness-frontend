@@ -69,6 +69,7 @@ button {
    ========================= */
 
 .hero-nav {
+    margin-bottom: 1rem;
     display: flex;
     justify-content: flex-end;
     padding: 2rem;
@@ -126,7 +127,7 @@ button {
     gap: 3rem;
     max-width: 1100px;
 
-    margin: 2rem auto; /*näher nach oben*/
+    margin: 1rem auto; /*näher nach oben*/
     padding: 0 2rem;
 
     align-items: flex-start;
@@ -137,6 +138,11 @@ button {
     max-width: 420px;
     border-radius: 16px;
     object-fit: cover;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;  /* 👈 Text sauber untereinander */
 }
 
 .about-text h2 {
