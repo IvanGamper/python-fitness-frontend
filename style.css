@@ -8,7 +8,7 @@ body {
 header {
     background-image: url("images/hero.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center 30%;
     background-repeat: no-repeat;
 
     color: white;
@@ -161,16 +161,7 @@ button {
    MOBILE
    ========================= */
 
-@media (max-width: 768px) {
-    .about {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .about-image img {
-        max-width: 100%;
-    }
-}
 
 .layout {
     display: grid;
@@ -183,14 +174,37 @@ button {
 }
 
 @media (max-width: 900px) {
+
     .layout {
-        grid-template-columns: auto 1fr;
-        gap: 1.5rem;
-    }
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-areas:
+                "menu image"
+                "text text";
+            gap: 1.5rem;
+        }
 
     .hero-nav {
-        justify-content: flex-start;
-        order: -1;
+            grid-area: menu;
+            justify-content: flex-start;
+        }
+
+    main {
+        display: contents;
     }
+
+    .about-image {
+        grid-area: image;
+    }
+
+    .about-text {
+        grid-area: text;
+    }
+
+    .about {
+        display: contents;
+    }
+
+
 }
 
