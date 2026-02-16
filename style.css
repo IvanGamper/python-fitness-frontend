@@ -184,7 +184,8 @@ button {
 
 @media (max-width: 900px) {
     .layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto 1fr;
+        gap: 1,5 rem;
     }
 
     .hero-nav {
