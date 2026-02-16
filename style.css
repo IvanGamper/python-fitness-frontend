@@ -129,7 +129,7 @@ button {
     gap: 3rem;
 
 
-    margin: 1rem 0; /*näher nach oben*/
+    margin: 1rem auto; /*näher nach oben*/
     padding: 0;
 
     align-items: flex-start;
@@ -161,6 +161,17 @@ button {
    MOBILE
    ========================= */
 
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+}
+
 .layout {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -172,7 +183,6 @@ button {
 }
 
 @media (max-width: 900px) {
-
     .layout {
         grid-template-columns: auto 1fr;
         gap: 1.5rem;
@@ -181,10 +191,6 @@ button {
     .hero-nav {
         justify-content: flex-start;
         order: -1;
-    }
-
-    .about-image img {
-            max-width: 100%;
     }
 }
 
