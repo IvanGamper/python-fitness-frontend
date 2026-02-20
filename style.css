@@ -5,6 +5,13 @@ body {
     color: #222;
 }
 
+.about-image img {
+    width: 300px;
+    max-width: 350px;
+    height: auto;
+
+}
+
 header {
     background-image: url("images/hero.jpg");
     background-size: cover;
