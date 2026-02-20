@@ -201,7 +201,9 @@ button {
     }
 
     .about-image {
-        grid-area: image;
+        max-width: 280px;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .about-text {
