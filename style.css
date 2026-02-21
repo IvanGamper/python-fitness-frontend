@@ -5,12 +5,7 @@ body {
     color: #222;
 }
 
-.about-image img {
-    width: 300px;
-    max-width: 350px;
-    height: auto;
 
-}
 
 header {
     background-image: url("images/hero.jpg");
@@ -19,7 +14,7 @@ header {
     background-repeat: no-repeat;
 
     color: white;
-    padding: 5rem 2rem;
+    padding: 15rem 2rem;
     text-align: center;
     position: relative;
 }
