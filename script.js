@@ -106,6 +106,54 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    //signup
+    const signupForm = document.getElementById("signup-form");
+    const emailInput = document.getElementById("email");
+    const downloadArea = document.getElementById("download-area");
+
+    if (signupForm && emailInput && downloadArea) {
+        signupForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+
+            if (!email) return;
+
+            downloadArea.innerHTML = "Anmeldung läuft...";
+
+            try {
+                const res = await fetch(`${BACKEND_URL}/signup`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email }),
+                });
+
+                if (!res.ok) {
+                    throw new Error("Serverfehler");
+                }
+
+                downloadArea.innerHTML = `
+                    <p style="color: green; font-weight: bold;">
+                    Danke für deine Anmeldung!
+                    Du erhältst in Kürze eine E-Mail mit dem Download-Link.
+                    </p>
+                `;
+
+                signupForm.reset();
+
+            } catch (err) {
+                downloadArea.innerHTML = `
+                    <p style="color: red;">
+                    Es gab ein Problem mit deiner Anmeldung.
+                    Bitte versuche es später erneut.
+                    </p>
+                `;
+                console.error(err);
+
+            }
+        });
+    }
+
     // ===============================
     // Beim Laden automatisch laden
     // ===============================
