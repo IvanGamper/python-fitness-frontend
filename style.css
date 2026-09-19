@@ -1116,4 +1116,14 @@ section.contact-section {
      .footer-bottom {
          gap: 18px;
      }
+
+     .footer-warning {
+         max-width: 1200px;
+         margin: 24px auto 0;
+         padding-top: 20px;
+         border-top: 1px solid #d4ccbc;
+         color: #858078;
+         font-size: 0.8rem;
+         text-align: center;
+     }
  }}
