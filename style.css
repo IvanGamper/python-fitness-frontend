@@ -898,3 +898,63 @@ button {
     }
 
 }
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+    background: #354d24;
+    color: #f4f1eb;
+    padding: 7rem 2rem;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-section .eyebrow {
+    color: #d8b27a;
+}
+
+.contact-section h2 {
+    margin: 1rem 0 1.5rem;
+    color: #f4f1eb;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.contact-section p:not(.eyebrow) {
+    max-width: 560px;
+    margin: 0 auto 2rem;
+    color: #d8d8ca;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    padding: 1.1rem 2rem;
+    border-radius: 40px;
+
+    background: #f4f1eb;
+    color: #292824;
+
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background: #d8b27a;
+    transform: translateY(-3px);
+}
+
+.contact-note {
+    display: block;
+    margin-top: 1.5rem;
+    color: #bfc5b1;
+    font-size: 0.85rem;
+}
