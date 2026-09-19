@@ -413,3 +413,124 @@ button {
         min-height: auto;
     }
 }
+
+.about {
+    background: #f4f1eb;
+    padding: 7rem 2rem;
+    display: grid;
+    grid-template-columns: minmax(280px, 390px) minmax(300px, 540px);
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 100%;
+    height: 100%;
+    background: #e4dccb;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.about-image img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1.15;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-text {
+    max-width: 540px;
+}
+
+.about-text .eyebrow {
+    color: #536b38;
+    margin-bottom: 1rem;
+}
+
+.about-text h2 {
+    color: #292824;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.08;
+    margin: 0 0 1.5rem;
+}
+
+.about-text p:not(.eyebrow) {
+    color: #625f57;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.about-text strong {
+    color: #292824;
+}
+
+.about-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin: 2rem 0;
+}
+
+.about-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.about-stat strong {
+    color: #292824;
+    font-size: 1.8rem;
+}
+
+.about-stat span {
+    color: #77736b;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    max-width: 110px;
+}
+
+.about-link {
+    display: inline-block;
+    color: #292824;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #c49b65;
+    transition: 0.3s ease;
+}
+
+.about-link:hover {
+    color: #536b38;
+    border-color: #536b38;
+}
+
+@media (max-width: 800px) {
+    .about {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 5rem 2rem;
+    }
+
+    .about-image,
+    .about-text {
+        max-width: 540px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-stats {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+}
