@@ -534,3 +534,79 @@ button {
         flex-wrap: wrap;
     }
 }
+
+
+.process-section {
+    background: #e9e2d2;
+    padding: 7rem 2rem;
+}
+
+.process-section .section-intro {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+}
+
+.process-section .eyebrow {
+    color: #536b38;
+}
+
+.process-section h2 {
+    color: #292824;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin: 1rem 0 0;
+}
+
+.process-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.process-card {
+    background: #fffdf8;
+    border-radius: 15px;
+    padding: 1.7rem;
+    min-height: 220px;
+    box-sizing: border-box;
+}
+
+.process-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #292824;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.process-card h3 {
+    color: #302e2a;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin: 0 0 0.8rem;
+}
+
+.process-card p {
+    color: #68645c;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .process-card {
+        min-height: auto;
+    }
+}
