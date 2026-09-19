@@ -1,3 +1,8 @@
+/* =========================
+   ALLGEMEINE EINSTELLUNGEN
+========================= */
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -14,22 +19,30 @@ a {
     text-decoration: none;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero {
     min-height: 75vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 4rem 2rem;
 
-    background
-        linear-gradient
-            (rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.45)),
-
-        url("images/hero.jpg");
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+       url("images/hero.jpg");
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
 }
 
 .hero-content {
@@ -37,10 +50,9 @@ a {
 }
 
 .eyebrow {
-    text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: bold;
-    letter-spacing: 0 .15rem;
+    letter-spacing: 0.15rem;
     color: #536b38;
     text-transform: uppercase;
 }
@@ -53,7 +65,7 @@ a {
 
 .hero p:not(.eyebrow) {
     max-width: 600px;
-    margin: 0 auto 2 rem;
+    margin: 0 auto 2rem;
     line-height: 1.6;
     font-size: 1.1rem;
 }
@@ -71,6 +83,77 @@ a {
 .primary-button:hover {
     background: #536b38;
 }
+
+/* =========================
+   FÜR WEN?
+========================= */
+
+.for-whom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+}
+
+.section-intro {
+    max-width: 650px;
+    margin-bottom: 3rem;
+}
+
+.section-intro h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin: 1rem 0;
+}
+
+.section-intro p:not(.eyebrow) {
+    color: #555;
+    line-height: 1.6;
+}
+
+.target-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.target-card {
+    background: #fffdf8;
+    border: 1px solid #dedbd2;
+    border-radius: 14px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.target-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-number {
+    display: block;
+    color: #536b38;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.target-card h3 {
+    margin: 0 0 1rem;
+    font-size: 1.3rem;
+}
+
+.target-card p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+    .target-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 main {
     padding: 0;
@@ -244,3 +327,55 @@ button {
 
 }
 
+/* =========================
+   SKILLS / SCHWERPUNKTE
+========================= */
+
+.skills-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: #fffdf8;
+    border: 1px solid #dedbd2;
+    border-radius: 14px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    margin: 0 0 1rem;
+    font-size: 1.4rem;
+}
+
+.skill-card p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
