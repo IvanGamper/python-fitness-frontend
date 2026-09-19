@@ -125,7 +125,7 @@ a {
 }
 
 .target-card:hover {
-    transform: translateY(-5px);
+    transform: translate(-5px);
 }
 
 .card-number {
