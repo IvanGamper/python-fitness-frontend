@@ -1334,11 +1334,10 @@ body > section:not([class]) {
     }
 
     .layout .hero-nav {
-        position: absolute;
-        top: 2.5rem;
-        right: max(2rem, calc((100% - 1100px) / 2));
-        z-index: 2;
-        margin: 0;
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin: 0 0 3rem;
         padding: 0;
     }
 }
