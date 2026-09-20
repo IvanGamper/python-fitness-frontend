@@ -1322,15 +1322,10 @@ body > section:not([class]) {
 /* Auf breiten Bildschirmen liegt das Menü über dem Abschnitt statt eine
    eigene Spalte zu verbrauchen. So bleibt dem Über-Ivan-Text genügend Breite. */
 @media (min-width: 901px) {
+
     .layout {
         display: block;
         position: relative;
-    }
-
-    .layout .about {
-        grid-template-columns: minmax(280px, 390px) minmax(400px, 540px);
-        max-width: 994px;
-        margin: 0 auto;
     }
 
     .layout .hero-nav {
@@ -1339,5 +1334,11 @@ body > section:not([class]) {
         justify-content: center;
         margin: 0 0 3rem;
         padding: 0;
+    }
+
+    .layout .about {
+        grid-template-columns: minmax(280px, 390px) minmax(400px, 540px);
+        max-width: 994px;
+        margin: 0 auto;
     }
 }
