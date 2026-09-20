@@ -1213,3 +1213,132 @@ section.contact-section {
         grid-area: text;
     }
 }
+
+/* =========================
+   EINHEITLICHE SEKTIONEN
+   Gleiche räumliche Wirkung, eigene Farben
+========================= */
+
+/* Alle großen Inhaltsbereiche beginnen mit derselben Höhe und demselben
+   vertikalen Abstand. Längerer Inhalt darf den Bereich bei Bedarf erweitern. */
+.for-whom,
+.skills-section,
+.layout,
+.process-section,
+.offer-section,
+.proof-section,
+section.contact-section,
+body > section:not([class]) {
+    min-height: 680px;
+    padding-top: clamp(4.5rem, 7vw, 7rem);
+    padding-bottom: clamp(4.5rem, 7vw, 7rem);
+}
+
+/* Bei den beiden begrenzten Containern wird die Farbe bis an den Rand des
+   Browserfensters fortgeführt. */
+.for-whom,
+.layout {
+    box-shadow: 0 0 0 100vmax var(--section-color);
+    clip-path: inset(0 -100vmax);
+}
+
+.for-whom {
+    --section-color: #f7ede0;
+    background: var(--section-color);
+    margin: 0 auto;
+}
+
+.skills-section {
+    background: #e4efe5;
+}
+
+.layout {
+    --section-color: #e9e3f4;
+    background: var(--section-color);
+    max-width: none;
+    margin: 0;
+    padding-left: max(2rem, calc((100% - 1100px) / 2));
+    padding-right: max(2rem, calc((100% - 1100px) / 2));
+}
+
+.layout .about {
+    background: transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.process-section {
+    background: #f4e2d4;
+}
+
+.offer-section {
+    background: #e1eef1;
+}
+
+.proof-section {
+    background: #f2ead4;
+}
+
+section.contact-section {
+    background: #354d24;
+}
+
+body > section:not([class]) {
+    background: #f4dca4;
+    padding-left: max(2rem, calc((100% - 960px) / 2));
+    padding-right: max(2rem, calc((100% - 960px) / 2));
+}
+
+/* Gleichmäßige Kartenhöhen innerhalb eines Bereichs. */
+.target-card,
+.process-card {
+    min-height: 250px;
+}
+
+.skill-card {
+    min-height: 170px;
+}
+
+@media (max-width: 900px) {
+    .for-whom,
+    .skills-section,
+    .layout,
+    .process-section,
+    .offer-section,
+    .proof-section,
+    section.contact-section,
+    body > section:not([class]) {
+        min-height: auto;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .layout {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Auf breiten Bildschirmen liegt das Menü über dem Abschnitt statt eine
+   eigene Spalte zu verbrauchen. So bleibt dem Über-Ivan-Text genügend Breite. */
+@media (min-width: 901px) {
+    .layout {
+        display: block;
+        position: relative;
+    }
+
+    .layout .about {
+        grid-template-columns: minmax(280px, 390px) minmax(400px, 540px);
+        max-width: 994px;
+        margin: 0 auto;
+    }
+
+    .layout .hero-nav {
+        position: absolute;
+        top: 2.5rem;
+        right: max(2rem, calc((100% - 1100px) / 2));
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+    }
+}
