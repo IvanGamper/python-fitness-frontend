@@ -13,6 +13,7 @@ body {
     margin: 0;
     background: #f4f4f4;
     color: #222;
+    padding-top: 80px;
 }
 
 a {
@@ -183,58 +184,49 @@ button {
 }
 
 /* =========================
-   HERO NAV (Handstandfactory-Style)f
-   ========================= */
+   PERMANENTES HAUPTMENÜ
+========================= */
 
 .hero-nav {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: flex-end;
-    padding: 2rem;
-    align-self: start;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 
-
-#nav-toggle {
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    border: none;
-    background: #111;
-    color: white;
-    cursor: pointer;
-    border-radius: 30px;
-}
-
-#nav-panel {
-    margin-top: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
 
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
 
-    opacity: 0;
-    transform: translateX(20px);
-    pointer-events: none;
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
+    padding: 1.2rem 2rem;
+    background: #292824;
 }
 
-#nav-panel.open {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-}
+/* Menü-Buttons */
+.hero-nav a {
+    display: inline-block;
 
+    padding: 0.8rem 1.4rem;
+    border-radius: 30px;
 
+    background: #f4f1eb;
+    color: #292824;
 
-#nav-panel a {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    font-weight: bold;
     text-decoration: none;
-    color: #111;
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
+
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover-Effekt */
+.hero-nav a:hover {
+    background: #536b38;
+    color: white;
 }
 
 /* =========================
