@@ -909,7 +909,7 @@ section.contact-section {
     box-sizing: border-box;
     padding: 120px 32px;
     background-color: #354d24;
-    color: #f4f1eb;
+    color: #354d24;
     text-align: center;
 }
 
@@ -1126,4 +1126,90 @@ section.contact-section {
          font-size: 0.8rem;
          text-align: center;
      }
- }}
+ }
+
+/* =========================
+   DESKTOP-FEINSCHLIFF
+   Einheitliche Größen für breite Bildschirme
+========================= */
+
+@media (min-width: 901px) {
+    .hero {
+        min-height: 700px;
+        height: min(78vh, 820px);
+        padding: 5rem 3rem;
+    }
+
+    .hero-content {
+        max-width: 760px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.75rem, 5vw, 4.8rem);
+        line-height: 1.02;
+    }
+
+    .for-whom {
+        max-width: 1160px;
+        padding: 7rem 2.5rem;
+    }
+
+    .layout {
+        max-width: 1200px;
+        gap: 4rem;
+        margin: 4rem auto;
+        padding: 0 2.5rem;
+    }
+
+    .skills-grid {
+        max-width: 960px;
+        gap: 1.2rem;
+    }
+
+    .skill-card {
+        min-height: 155px;
+        padding: 1.5rem;
+    }
+
+    .offer-main-grid,
+    .coming-soon,
+    .reels-grid {
+        max-width: 960px;
+    }
+}
+
+/* Das mobile About-Layout kommt im Original weiter oben als die Desktop-Regel.
+   Diese Regel am Dateiende sorgt deshalb zuverlässig dafür, dass es nicht
+   seitlich aus dem Viewport herausragt. */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "menu"
+            "image"
+            "text";
+        gap: 2rem;
+    }
+
+    .hero-nav {
+        grid-area: menu;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .about {
+        display: contents;
+    }
+
+    .about-image {
+        grid-area: image;
+        width: min(100%, 440px);
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        grid-area: text;
+    }
+}
