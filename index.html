@@ -478,22 +478,111 @@
 </section>
 
 
-<section>
-    <h2>Kostenloses Handstand-PDF herunterladen und Newslatter abonieren</h2>
+<!-- PDF & Newsletter -->
 
-    <form id="signup-form">
-        <input
-                type="email"
-                id="email"
-                placeholder="E-Mail-Adresse"
-                required
-        >
-        <button type="submit">PDF anfordern</button>
-    </form>
+<section id="newsletter" class="newsletter-section">
 
-    <div id="download-area"></div>
+    <div class="newsletter-content">
+
+        <p class="eyebrow">KOSTENLOSER DOWNLOAD</p>
+
+        <h2>
+            Dein Weg zum<br>
+            ersten Handstand
+        </h2>
+
+        <p>
+            Sichere dir mein kostenloses Handstand-PDF mit hilfreichen
+            Übungen und ersten Impulsen für dein Training.
+            Abonniere gleichzeitig den Newsletter und erhalte weitere
+            Tipps rund um Kraft, Mobility und Movement.
+        </p>
+
+        <form id="signup-form">
+
+            <input
+                    type="email"
+                    id="email"
+                    placeholder="Deine E-Mail-Adresse"
+                    required
+            >
+
+            <button type="submit">
+                PDF anfordern
+            </button>
+
+        </form>
+
+        <div id="download-area"></div>
+
+        <span class="contact-note">
+            Kein Spam. Nur ausgewählte Inhalte und Trainingsimpulse.
+        </span>
+
+    </div>
+
 </section>
 
+
+<!-- Feedback -->
+
+<section id="feedback" class="feedback-section">
+
+    <div class="feedback-content">
+
+        <p class="eyebrow">DEIN FEEDBACK</p>
+
+        <h2>
+            Deine Meinung zählt.
+        </h2>
+
+        <p>
+            Ich entwickle Python Fitness kontinuierlich weiter.
+            Teile deine Erfahrungen, Wünsche oder Verbesserungsvorschläge
+            und werde Teil dieser Entwicklung.
+        </p>
+
+        <form id="feedback-form">
+
+            <input
+                    type="text"
+                    id="feedback-name"
+                    placeholder="Dein Name (optional)"
+            >
+
+            <input
+                    type="email"
+                    id="feedback-email"
+                    placeholder="Deine E-Mail-Adresse (optional)"
+            >
+
+            <select id="feedback-category" required>
+                <option value="">Worum geht es?</option>
+                <option value="website">Website</option>
+                <option value="training">Training & Übungen</option>
+                <option value="angebot">Coaching-Angebot</option>
+                <option value="pdf">Handstand-PDF</option>
+                <option value="sonstiges">Sonstiges</option>
+            </select>
+
+            <textarea
+                    id="feedback-message"
+                    placeholder="Was möchtest du mir mitteilen?"
+                    rows="5"
+                    required
+            ></textarea>
+
+            <button type="submit">
+                Feedback senden
+            </button>
+
+        </form>
+
+        <div id="feedback-status"></div>
+
+    </div>
+
+</section>
 
 <footer class="site-footer">
 
