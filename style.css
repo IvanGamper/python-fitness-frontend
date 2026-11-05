@@ -1364,6 +1364,11 @@ body > section:not([class]) {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* JavaScript setzt nach „Akzeptieren“ oder „Ablehnen“ hidden = true. */
+.cookie-banner[hidden] {
+    display: none !important;
+}
+
 .cookie-content {
     width: 100%;
     max-width: 900px;
