@@ -36,8 +36,14 @@ function loadGoogleAnalytics() {
 
 
 function saveConsent(value) {
-    localStorage.setItem(CONSENT_KEY, value);
     cookieBanner.hidden = true;
+    cookieBanner.style.display = "none";
+
+    try {
+        localStorage.setItem(CONSENT_KEY, value);
+    } catch (error) {
+        console.warn("Auswahl konnte nicht gespeichert werden.", error);
+    }
 }
 
 
