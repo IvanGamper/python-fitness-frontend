@@ -378,12 +378,6 @@ button {
 }
 
 @media (max-width: 800px) {
-    .about {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 5rem 2rem;
-    }
-
     .about-image,
     .about-text {
         max-width: 540px;
@@ -416,14 +410,6 @@ button {
 
 @media (max-width: 900px) {
 
-    .layout {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            grid-template-areas:
-                "menu image"
-                "text text";
-            gap: 1.5rem;
-        }
 
     .hero-nav {
             grid-area: menu;
@@ -432,16 +418,6 @@ button {
 
     main {
         display: contents;
-    }
-
-    .about-image {
-        max-width: 280px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .about-text {
-        grid-area: text;
     }
 
 
