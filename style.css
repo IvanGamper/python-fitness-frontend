@@ -49,11 +49,12 @@ a {
 ========================= */
 
 .hero {
+    box-sizing: border-box;
     min-height: 75vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: left;
     padding: 4rem 2rem;
 
     background:
@@ -72,6 +73,30 @@ a {
 
 .hero-content {
     max-width: 850px;
+}
+
+.hero-headline-box {
+    box-sizing: border-box;
+    width: min(100%, 380px);
+    padding: clamp(0.8rem, 1.4vw, 1rem);
+    background: #c8dd72;
+    color: #111;
+    text-align: left;
+}
+
+.hero-headline-box .eyebrow {
+    margin: 0 0 0.9rem;
+    color: #303820;
+}
+
+.hero .hero-headline-box h1 {
+    margin: 0;
+    color: #111;
+    font-size: clamp(1.8rem, 2.7vw, 2.55rem);
+}
+
+.hero-content > .primary-button {
+    margin-top: 1.5rem;
 }
 
 .eyebrow {
