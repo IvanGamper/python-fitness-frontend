@@ -1390,6 +1390,201 @@ body > section:not([class]) {
     border: 1px solid #77736a;
 }
 
+/* =========================
+   SEITLICHES HAUPTMENÜ
+========================= */
+
+.hero-nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 78px;
+    padding: 0 1.5rem;
+    background: #050505;
+}
+
+.hero-nav .nav-brand {
+    padding: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.34em;
+    line-height: 1;
+}
+
+.hero-nav .nav-brand:hover,
+.hero-nav .nav-brand:focus-visible {
+    background: transparent;
+    color: #c8dd72;
+    transform: none;
+}
+
+.nav-toggle,
+.nav-close {
+    display: grid;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    color: #fff;
+}
+
+.nav-toggle {
+    width: 54px;
+    height: 54px;
+    gap: 6px;
+    padding: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-backdrop {
+    position: fixed;
+    inset: 0;
+    /* Liegt hinter der Navigation, damit die Menülinks anklickbar bleiben. */
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.62);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-backdrop.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    width: min(460px, 100vw);
+    height: 100dvh;
+    box-sizing: border-box;
+    padding: 1.5rem clamp(1.5rem, 4vw, 3rem) 2rem;
+    overflow-y: auto;
+    transform: translateX(100%);
+    background: #111;
+    color: #fff;
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-panel.open {
+    transform: translateX(0);
+}
+
+.nav-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    color: #c8dd72;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.nav-close {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.nav-panel-links {
+    display: grid;
+    gap: 0.25rem;
+    padding: 2rem 0;
+}
+
+.nav-panel .nav-panel-links a {
+    padding: 0.28rem 0;
+    background: transparent;
+    color: #fff;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.02;
+}
+
+.nav-panel .nav-panel-links a:hover,
+.nav-panel .nav-panel-links a:focus-visible {
+    background: transparent;
+    color: #c8dd72;
+    transform: translateX(0.35rem);
+}
+
+.nav-panel-secondary {
+    display: grid;
+    gap: 0.85rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.nav-panel .nav-panel-secondary a {
+    padding: 0;
+    background: transparent;
+    color: #bdbdbd;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.nav-panel .nav-panel-secondary a:hover,
+.nav-panel .nav-panel-secondary a:focus-visible {
+    background: transparent;
+    color: #fff;
+}
+
+.nav-panel .nav-panel-cta {
+    display: block;
+    margin-top: auto;
+    padding: 1rem 1.2rem;
+    background: #c8dd72;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.nav-panel .nav-panel-cta:hover,
+.nav-panel .nav-panel-cta:focus-visible {
+    background: #fff;
+    color: #111;
+    transform: none;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
 @media (max-width: 600px) {
     .cookie-banner {
         left: 0.8rem;

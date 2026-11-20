@@ -16,10 +16,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const toggle = document.getElementById("nav-toggle");
     const panel = document.getElementById("nav-panel");
+    const closeMenu = document.getElementById("nav-close");
+    const backdrop = document.getElementById("nav-backdrop");
 
     if (toggle && panel) {
+        const setMenuState = (isOpen) => {
+            panel.classList.toggle("open", isOpen);
+            document.body.classList.toggle("menu-open", isOpen);
+            toggle.setAttribute("aria-expanded", String(isOpen));
+            toggle.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
+            panel.setAttribute("aria-hidden", String(!isOpen));
+            backdrop?.classList.toggle("open", isOpen);
+        };
+
         toggle.addEventListener("click", () => {
-            panel.classList.toggle("open");
+            setMenuState(!panel.classList.contains("open"));
+        });
+
+        closeMenu?.addEventListener("click", () => setMenuState(false));
+        backdrop?.addEventListener("click", () => setMenuState(false));
+
+        panel.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => setMenuState(false));
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                setMenuState(false);
+            }
         });
     }
 

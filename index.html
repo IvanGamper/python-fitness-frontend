@@ -10,18 +10,55 @@
     <meta charset="UTF-8">
     <title>Python Fitness</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css?v=20261105-1">
+    <link rel="stylesheet" href="style.css?v=20261120-1">
 </head>
 <body>
 
-<nav class="hero-nav">
-    <a href="index.html">Hauptseite</a>
-    <a href="coaching/index.html">Coaching</a>
-    <a href="code/index.html">Coden & Lernen</a>
-    <a href="login.html">Member Login</a>
+<nav class="hero-nav" aria-label="Hauptnavigation">
+    <a class="nav-brand" href="#top" aria-label="Python Fitness Startseite">
+        PYTHON FITNESS
+    </a>
+
+    <button
+            id="nav-toggle"
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+            aria-label="Menü öffnen"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div id="nav-panel" class="nav-panel" aria-hidden="true">
+        <div class="nav-panel-header">
+            <span>MENÜ</span>
+            <button id="nav-close" class="nav-close" type="button" aria-label="Menü schließen">×</button>
+        </div>
+
+        <div class="nav-panel-links">
+            <a href="#fuer-wen">Für wen?</a>
+            <a href="#skills">Skills</a>
+            <a href="#ablauf">Ablauf</a>
+            <a href="#ueber-ivan">Über Ivan</a>
+            <a href="#angebot">Angebot</a>
+        </div>
+
+        <div class="nav-panel-secondary">
+            <a href="coaching/index.html">Coaching</a>
+            <a href="code/index.html">Coden &amp; Lernen</a>
+            <a href="login.html">Member Login</a>
+        </div>
+
+        <a class="nav-panel-cta" href="#kontakt">Kostenloses Erstgespräch</a>
+    </div>
 </nav>
 
-<header class="hero">
+<div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
+
+<header id="top" class="hero">
 
 
 
@@ -672,7 +709,7 @@
 
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=20261120-1"></script>
 
 
 <!-- Cookie-Consent-Banner -->
