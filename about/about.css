@@ -1,0 +1,111 @@
+.about-page .about-main {
+    width: 100%;
+    padding: 0;
+}
+
+.about-intro {
+    box-sizing: border-box;
+    width: min(100%, 49rem);
+    margin-inline: auto;
+    padding: clamp(2.8rem, 6vw, 5.5rem) var(--pf-gutter);
+    text-align: center;
+}
+
+.about-intro h1 {
+    margin: 0 0 1.3rem;
+    font-size: clamp(2.15rem, 4.8vw, 4rem);
+    font-weight: 750;
+    line-height: 1.08;
+    letter-spacing: -0.05em;
+}
+
+.about-intro p {
+    max-width: 53ch;
+    margin: 0 auto 0.9rem;
+}
+
+.about-page .about-intro .about-lead {
+    color: var(--pf-ink);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 650;
+    line-height: 1.4;
+}
+
+.about-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.about-page .about-main > .about-approach {
+    margin: 0;
+    padding: clamp(2.4rem, 6vw, 5.5rem) var(--pf-gutter);
+    border-top: 1px solid var(--pf-line);
+    border-bottom: 0;
+    background: var(--pf-soft);
+}
+
+.about-approach-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 6vw, 5rem);
+    align-items: center;
+    width: min(100%, 63rem);
+    margin-inline: auto;
+}
+
+.about-photo {
+    margin: 0;
+}
+
+.about-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.about-page .about-approach-copy h2 {
+    margin: 0;
+    font-size: clamp(1.85rem, 3.6vw, 3.25rem);
+    line-height: 1.12;
+}
+
+.about-principles {
+    margin: 1.25rem 0;
+}
+
+.about-principles > div {
+    padding-block: 0.85rem;
+    border-top: 1px solid var(--pf-line);
+}
+
+.about-principles dt {
+    font-size: 1.1rem;
+    font-weight: 750;
+}
+
+.about-principles dd {
+    margin: 0.2rem 0 0;
+    color: var(--pf-muted);
+}
+
+.about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.2rem;
+}
+
+@media (max-width: 760px) {
+    .about-approach-inner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .about-approach-copy {
+        grid-row: 1;
+    }
+
+    .about-photo {
+        max-width: 30rem;
+    }
+}
