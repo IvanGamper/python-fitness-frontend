@@ -719,6 +719,23 @@ body.content-page {
     }
 }
 
+@media (max-width: 480px) {
+    .hero-nav {
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        padding-inline: var(--pf-gutter);
+    }
+
+    .hero-nav .nav-brand {
+        font-size: 0.875rem;
+        letter-spacing: 0.28em;
+    }
+
+    .hero-nav .nav-toggle {
+        flex-shrink: 0;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
