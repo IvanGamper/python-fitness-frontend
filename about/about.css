@@ -45,7 +45,7 @@
 
 .about-approach-inner {
     display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
     gap: clamp(1.5rem, 6vw, 5rem);
     align-items: center;
     width: min(100%, 63rem);
@@ -96,16 +96,97 @@
     gap: 0.75rem 1.2rem;
 }
 
+.about-page .about-main > .about-gallery {
+    box-sizing: border-box;
+    width: min(100%, calc(63rem + 2 * var(--pf-gutter)));
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) var(--pf-gutter);
+    border: 0;
+}
+
+.about-page .about-gallery h2 {
+    margin: 0 0 clamp(1.5rem, 4vw, 2.75rem);
+    scroll-margin-top: calc(var(--pf-nav-height) + 1rem);
+}
+
+.about-stories {
+    display: grid;
+    gap: clamp(2rem, 6vw, 4.5rem);
+}
+
+.about-story {
+    display: grid;
+    grid-template-areas: "photos copy";
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+}
+
+.about-story-reversed {
+    grid-template-areas: "copy photos";
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+}
+
+.about-story-copy {
+    grid-area: copy;
+    min-width: 0;
+    z-index: 1;
+    margin-inline-start: -1rem;
+    padding: clamp(1rem, 4vw, 2rem);
+    border: 1px solid var(--pf-line);
+    border-radius: 8px;
+    background: var(--pf-paper);
+    transform: translateY(-1.25rem);
+}
+
+.about-story-reversed .about-story-copy {
+    margin-inline: 0 -1rem;
+}
+
+.about-story-copy h3 {
+    margin: 0;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+.about-story-copy p {
+    margin: 0.8rem 0 0;
+}
+
+.about-story-photos {
+    grid-area: photos;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.65rem, 2vw, 1rem);
+    min-width: 0;
+}
+
+.about-story-photos img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
 @media (max-width: 760px) {
     .about-approach-inner {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .about-approach-copy {
-        grid-row: 1;
-    }
-
     .about-photo {
         max-width: 30rem;
+    }
+
+    .about-story,
+    .about-story-reversed {
+        grid-template-areas: "copy" "photos";
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.75rem;
+    }
+
+    .about-story .about-story-copy {
+        margin-inline: 0;
+        transform: none;
     }
 }
