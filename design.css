@@ -1,24 +1,30 @@
-/* PYTHON FITNESS · Farben, Typografie und Layout der Website */
+/* PYTHON FITNESS · Farben, Typografie und Layout */
 
 :root {
-    --pf-background: #0a0a0a;
-    --pf-surface: #161616;
-    --pf-text: #fff;
-    --pf-muted: #c6c6c6;
-    --pf-line: #3c3c3c;
-    --pf-yellow: #ffe500;
-    --pf-width: 76rem;
+    --pf-page: #faf9f5;
+    --pf-paper: #fff;
+    --pf-soft: #edf0e7;
+    --pf-ink: #25302a;
+    --pf-muted: #4c5750;
+    --pf-line: #d8ded4;
+    --pf-link: #405d44;
+    --pf-dark: #243029;
+    --pf-dark-surface: #303d35;
+    --pf-dark-text: #f7f8f3;
+    --pf-dark-muted: #d7e0d7;
+    --pf-dark-line: #56675b;
+    --pf-accent: #eed676;
+    --pf-width: 71rem;
     --pf-gutter: clamp(1.25rem, 4vw, 3rem);
-    --pf-section-space: clamp(3.5rem, 7vw, 7rem);
+    --pf-section-space: clamp(3.25rem, 6vw, 6.25rem);
     --pf-nav-height: 78px;
-    --pf-title-font: "Arial Narrow", Arial, sans-serif;
 }
 
 body {
-    background: var(--pf-background);
-    color: var(--pf-text);
-    font-size: 1rem;
-    line-height: 1.6;
+    margin: 0;
+    background: var(--pf-page);
+    color: var(--pf-ink);
+    font: 1rem / 1.65 system-ui, sans-serif;
 }
 
 main {
@@ -32,167 +38,150 @@ body.home-page {
 body.code-page,
 body.content-page {
     padding-top: 0;
-    background: var(--pf-background);
-    color: var(--pf-text);
+    background: var(--pf-page);
+    color: var(--pf-ink);
 }
 
 :where(a, button, input, select, textarea):focus-visible {
-    outline: 2px solid var(--pf-yellow);
+    outline: 2px solid var(--pf-link);
     outline-offset: 3px;
 }
 
-/* Navigation: dieselben Links für Desktop und Seitenmenü */
-
 .hero-nav,
-.code-page .hero-nav {
-    background: var(--pf-background);
-    border-bottom: 1px solid var(--pf-line);
+.code-page .hero-nav,
+.content-page .subpage-nav {
+    border-bottom: 1px solid var(--pf-dark-line);
+    background: var(--pf-dark);
+    color: var(--pf-dark-text);
 }
 
-.hero-nav .nav-brand:hover,
-.hero-nav .nav-brand:focus-visible,
-.hero-nav .nav-panel .nav-panel-links a:hover,
-.hero-nav .nav-panel .nav-panel-links a:focus-visible,
-.hero-nav .nav-panel .nav-panel-secondary a:hover,
-.hero-nav .nav-panel .nav-panel-secondary a:focus-visible {
-    color: var(--pf-yellow);
+.hero-nav .nav-brand {
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
 }
 
-.hero-nav .nav-panel-header {
-    color: var(--pf-yellow);
+.hero-nav .nav-panel {
+    background: var(--pf-dark);
+}
+
+.hero-nav .nav-panel-header,
+.hero-nav .nav-brand:is(:hover, :focus-visible),
+.hero-nav .nav-panel :is(.nav-panel-links, .nav-panel-secondary) a:is(:hover, :focus-visible) {
+    color: var(--pf-accent);
 }
 
 .hero-nav .nav-panel .nav-panel-cta {
-    border-radius: 0;
-    background: var(--pf-yellow);
-    color: var(--pf-background);
+    border-radius: 6px;
+    background: var(--pf-accent);
+    color: var(--pf-ink);
 }
 
-.hero-nav .nav-panel .nav-panel-cta:hover,
-.hero-nav .nav-panel .nav-panel-cta:focus-visible {
-    background: var(--pf-text);
+.hero-nav .nav-panel .nav-panel-cta:is(:hover, :focus-visible) {
+    background: var(--pf-dark-text);
 }
 
-.page-title-band {
-    box-sizing: border-box;
-    padding: clamp(2rem, 5vw, 4.25rem) var(--pf-gutter);
-    background: var(--pf-yellow);
-    color: var(--pf-background);
-    text-align: center;
+:is(.hero-nav, .home-page .hero, .offer-section, .subpage-nav) :focus-visible {
+    outline-color: var(--pf-accent);
 }
 
-.page-title-band h1,
-.home-page .hero .page-title-band h1 {
-    max-width: var(--pf-width);
-    margin: 0 auto;
-    font: 800 clamp(1.9rem, 4.35vw, 4.5rem) / 1.02 var(--pf-title-font);
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    text-wrap: balance;
-    overflow-wrap: anywhere;
-}
+/* Startseite: Guide, Vorstellung, Coaching-Angebote */
 
-.page-title-band > p {
-    max-width: 48ch;
-    margin: 1rem auto 0;
-}
-
-.home-page .hero,
-.code-page .code-hero {
+.home-page .hero {
     display: block;
     height: auto;
     min-height: 0;
-    padding: 0;
-    background: var(--pf-background);
+    padding: clamp(2.75rem, 6vw, 5.5rem) var(--pf-gutter) clamp(2.75rem, 5vw, 4.5rem);
+    background: var(--pf-dark);
+    color: var(--pf-dark-text);
+    text-align: center;
 }
 
-.home-page .hero-content,
-.code-page .code-hero-content {
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
-    align-items: center;
-    gap: clamp(1.5rem, 5vw, 5rem);
-    width: 100%;
-    max-width: calc(var(--pf-width) + 2 * var(--pf-gutter));
+.home-page .hero-content {
+    max-width: 58rem;
     margin: 0 auto;
-    padding: clamp(2rem, 5vw, 4rem) var(--pf-gutter);
 }
 
-.home-page .hero-copy h2,
-.code-page .code-hero-box h2 {
-    margin: 0 0 1.35rem;
-    font: 800 clamp(2.35rem, 5.25vw, 5rem) / 1.02 var(--pf-title-font);
-    letter-spacing: -0.055em;
+.home-page .hero .eyebrow {
+    color: var(--pf-accent);
+}
+
+.home-page .hero h1 {
+    margin: 0.75rem 0 1rem;
+    color: var(--pf-dark-text);
+    font: 750 clamp(2.1rem, 4.25vw, 4.25rem) / 1.07 system-ui, sans-serif;
+    letter-spacing: -0.05em;
     text-wrap: balance;
 }
 
-.home-page .hero-copy p:not(.eyebrow),
-.code-page .code-hero-box p {
-    max-width: 42ch;
-    margin: 0 0 1.6rem;
-    color: var(--pf-muted);
-    font-weight: 400;
-    line-height: 1.65;
+.home-page .hero .hero-lead {
+    max-width: 50ch;
+    margin: 0 auto;
+    color: var(--pf-dark-muted);
+    font-size: clamp(1rem, 1.4vw, 1.18rem);
 }
 
-.home-page .eyebrow,
-.home-page .coming-label,
-.code-page .section-kicker {
-    color: var(--pf-yellow);
-    font-size: 0.875rem;
-    letter-spacing: 0.12em;
+.home-page .newsletter-content {
+    box-sizing: border-box;
+    width: min(100%, 37rem);
+    margin: clamp(1.6rem, 4vw, 2.6rem) auto 1.25rem;
+    padding: clamp(1.15rem, 3vw, 1.8rem);
+    border: 1px solid var(--pf-dark-line);
+    border-radius: 10px;
+    background: var(--pf-dark-surface);
+    text-align: left;
 }
 
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.8rem 1.5rem;
+.newsletter-content h2 {
+    margin: 0 0 0.4rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    line-height: 1.2;
+}
+
+.home-page .newsletter-content p {
+    margin: 0 0 1rem;
+    color: var(--pf-dark-muted);
+    font-size: 1rem;
+}
+
+.signup-fields {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.5rem;
+    margin-top: 0.35rem;
 }
 
 .hero-secondary,
+.home-page .offer-button,
 .home-page .about-link,
 .code-page .code-demo-link,
 .code-page .code-footer a {
     width: fit-content;
-    color: var(--pf-yellow);
     text-decoration: underline;
-    text-underline-offset: 0.25em;
+    text-underline-offset: 0.24em;
+}
+
+.hero-secondary,
+.home-page .offer-button {
+    color: var(--pf-accent);
 }
 
 .hero-secondary:hover,
-.home-page .about-link:hover,
-.code-page .code-demo-link:hover,
-.code-page .code-footer a:hover {
-    color: var(--pf-text);
+.home-page .offer-button:hover {
+    color: var(--pf-dark-text);
 }
 
-.hero-image {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 8 / 9;
-    overflow: hidden;
-    border-bottom: 4px solid var(--pf-yellow);
+#download-area:not(:empty) {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    background: var(--pf-paper);
+    color: var(--pf-ink);
 }
 
-/* Die linke Hälfte der vorhandenen Collage ist das Handstand-Foto. */
-.hero-image img {
-    display: block;
-    width: 200%;
-    height: 100%;
-    object-fit: cover;
+#download-area p {
+    margin: 0;
 }
-
-.hero-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(10, 10, 10, 0.3), transparent 46%);
-    pointer-events: none;
-}
-
-/* Startseite: wiederkehrende Abstände und eine gemeinsame Kartenoptik */
 
 .home-page main > section {
     box-sizing: border-box;
@@ -202,102 +191,54 @@ body.content-page {
     margin: 0;
     padding: var(--pf-section-space) max(var(--pf-gutter), calc((100% - var(--pf-width)) / 2));
     border-top: 1px solid var(--pf-line);
-    background: var(--pf-background);
+    background: var(--pf-page);
     box-shadow: none;
     clip-path: none;
 }
 
-.home-page main > section[id],
-.home-page #top {
+.home-page :is(main > section[id], #top, #newsletter) {
     scroll-margin-top: var(--pf-nav-height);
 }
 
-.home-page :is(.skills-section, .offer-section, .newsletter-section) {
-    background: #101010;
+.home-page :is(.skills-section, .contact-section) {
+    background: var(--pf-soft);
 }
 
 .home-page .section-intro {
     max-width: 48rem;
-    margin: 0 0 clamp(1.75rem, 4vw, 3.25rem);
+    margin: 0 0 clamp(1.75rem, 4vw, 3rem);
     text-align: left;
 }
 
-.home-page .section-intro h2,
-.home-page .about-text h2,
-.home-page :is(.contact-content, .newsletter-content, .feedback-content) h2 {
-    max-width: 21ch;
-    margin: 0 0 1rem;
-    color: var(--pf-text);
-    font: 800 clamp(2rem, 4.5vw, 4.2rem) / 1.04 var(--pf-title-font);
-    letter-spacing: -0.045em;
+.home-page :is(.section-intro h2, .about-text h2, .proof-copy h2, .contact-content h2, .feedback-content h2) {
+    margin: 0 0 0.8rem;
+    color: var(--pf-ink);
+    font: 740 clamp(1.9rem, 3.5vw, 3.25rem) / 1.13 system-ui, sans-serif;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
 }
 
-.home-page :is(.section-intro, .about-text, .newsletter-content, .feedback-content) p:not(.eyebrow) {
+.home-page :is(.section-intro, .about-text, .proof-copy, .contact-content, .feedback-content) p:not(.eyebrow) {
     color: var(--pf-muted);
     font-size: 1rem;
     line-height: 1.7;
 }
 
-.home-page :is(.target-cards, .skills-grid, .process-grid, .offer-main-grid, .coming-soon) {
-    max-width: none;
-    margin-inline: 0;
+.home-page .eyebrow,
+.code-page .section-kicker {
+    color: var(--pf-link);
+    font-size: 0.875rem;
+    font-weight: 750;
+    letter-spacing: 0.11em;
 }
 
-.home-page :is(.target-cards, .skills-grid, .process-grid, .offer-main-grid) {
-    gap: 1rem;
-}
-
-.home-page :is(.target-card, .skill-card, .process-card, .main-offer-card) {
-    box-sizing: border-box;
-    min-width: 0;
-    min-height: 0;
-    padding: clamp(1.25rem, 3vw, 2.25rem);
-    border: 1px solid var(--pf-line);
-    border-radius: 0;
-    background: var(--pf-surface);
-    color: var(--pf-text);
-}
-
-.home-page .target-card:hover {
-    transform: none;
-}
-
-.home-page .skill-card.featured {
-    border-top: 3px solid var(--pf-yellow);
-}
-
-.home-page :is(.target-card, .skill-card, .process-card, .main-offer-card) h3 {
-    color: var(--pf-text);
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
-    line-height: 1.2;
-    overflow-wrap: anywhere;
-}
-
-.home-page :is(.target-card, .skill-card, .process-card, .main-offer-card) p,
-.home-page .main-offer-card li {
-    color: var(--pf-muted);
-    font-size: 1rem;
-    line-height: 1.65;
-}
-
-.home-page .skill-label,
-.home-page .process-number,
-.code-page .code-step-number {
-    border-radius: 0;
-    background: var(--pf-yellow);
-    color: var(--pf-background);
-}
-
-.home-page .skill-label {
-    padding: 0.25rem 0.55rem;
-    font-size: 0.75rem;
-}
-
-.home-page .about {
+.home-page .about,
+.home-page .proof-section {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
     align-items: center;
-    gap: clamp(2rem, 6vw, 6rem);
+    gap: clamp(2rem, 7vw, 7rem);
+    text-align: left;
 }
 
 .home-page :is(.about-image, .about-text) {
@@ -311,124 +252,188 @@ body.content-page {
     display: none;
 }
 
-.home-page .about-image img {
-    aspect-ratio: 5 / 6;
+.home-page .about-image img,
+.hero-image {
+    aspect-ratio: 8 / 9;
+    border-radius: 12px;
+}
+
+.hero-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Im Startbild liegt das Foto links, der Code rechts. */
+.hero-image img {
+    display: block;
+    width: 200%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-page .about-stats {
+    margin-block: 1.5rem;
+    gap: 1.2rem clamp(1rem, 3vw, 2.5rem);
+    flex-wrap: wrap;
+}
+
+.home-page .about-stat strong,
+.home-page .about-text strong {
+    color: var(--pf-ink);
+}
+
+.home-page .about-stat span {
+    color: var(--pf-muted);
+    font-size: 0.875rem;
+}
+
+.home-page .about-link,
+.code-page .code-demo-link,
+.code-page .code-footer a {
+    padding: 0;
+    border: 0;
+    color: var(--pf-link);
+}
+
+.home-page :is(.target-cards, .skills-grid, .process-grid, .offer-main-grid) {
+    max-width: none;
+    margin-inline: 0;
+    gap: 1rem;
+}
+
+.home-page :is(.target-card, .skill-card, .process-card) {
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--pf-line);
+    border-radius: 8px;
+    background: var(--pf-paper);
+}
+
+.home-page .target-card:hover {
+    transform: none;
+}
+
+.home-page .skill-card.featured {
+    border-top: 3px solid var(--pf-link);
+}
+
+.home-page :is(.target-card, .skill-card, .process-card) h3 {
+    color: var(--pf-ink);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.home-page :is(.target-card, .skill-card, .process-card) p {
+    color: var(--pf-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.home-page .skill-label,
+.home-page .process-number,
+.code-page .code-step-number {
+    background: var(--pf-accent);
+    color: var(--pf-ink);
+}
+
+.home-page .skill-label {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+}
+
+.home-page .offer-section {
+    background: var(--pf-dark);
+    color: var(--pf-dark-text);
+}
+
+.home-page .offer-section h2 {
+    color: var(--pf-dark-text);
+}
+
+.home-page .offer-section :is(.section-intro p, .main-offer-card p) {
+    color: var(--pf-dark-muted);
+}
+
+.home-page .offer-main-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.2rem, 4vw, 3.5rem);
+}
+
+.home-page .main-offer-card {
+    min-height: 0;
+    padding: 1.25rem 0 0;
+    border-top: 1px solid var(--pf-dark-line);
     border-radius: 0;
 }
 
-.home-page .about-text strong {
-    color: var(--pf-text);
-}
-
-.home-page .about-stat strong {
-    color: var(--pf-yellow);
-}
-
-.home-page .about-stat span,
-.home-page .coming-grid p {
-    color: var(--pf-muted);
-}
-
-.home-page .about-link {
+.home-page .offer-button {
+    margin: 0.25rem 0;
     padding: 0;
-    border: 0;
-}
-
-.home-page .main-offer-card li::before {
-    content: "•";
-    color: var(--pf-yellow);
-}
-
-.home-page .coming-soon {
-    border-color: var(--pf-line);
-}
-
-.home-page .coming-grid h3 {
-    color: var(--pf-text);
-}
-
-.home-page .proof-section {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 1.5rem;
-    text-align: left;
-}
-
-.home-page .proof-section .section-intro {
-    margin-bottom: 0;
-}
-
-.home-page .proof-section .section-intro .eyebrow {
-    color: var(--pf-yellow);
-}
-
-.home-page .contact-section {
-    background: var(--pf-yellow);
-    color: var(--pf-background);
-    text-align: left;
+    font-weight: 750;
 }
 
 .home-page .contact-content {
-    max-width: none;
+    max-width: 50rem;
+    margin: 0;
 }
 
-.home-page .contact-section :is(h2, p:not(.eyebrow), .eyebrow, .contact-note) {
+.home-page .contact-section {
+    text-align: left;
+}
+
+.home-page .contact-content p:not(.eyebrow) {
     margin-inline: 0;
-    color: var(--pf-background);
 }
 
-.home-page .contact-section :focus-visible {
-    outline-color: var(--pf-background);
+.home-page .contact-note {
+    color: var(--pf-muted);
 }
 
-.home-page :is(.newsletter-content, .feedback-content) {
-    max-width: 44rem;
+.home-page .feedback-content {
+    max-width: 42rem;
 }
 
-.home-page :is(#signup-form, #feedback-form),
+.home-page #feedback-form,
 .content-page #login-form {
     display: grid;
     max-width: 35rem;
-    gap: 0.65rem;
-    margin-top: 1.5rem;
+    gap: 0.55rem;
+    margin-top: 1.25rem;
 }
 
-.home-page :is(#signup-form, #feedback-form) label,
-.content-page #login-form label,
-.code-page .workout-form label {
-    color: var(--pf-text);
+:is(#signup-form, #feedback-form, #login-form, .workout-form) label {
     font-size: 0.9rem;
     font-weight: 700;
 }
 
-.home-page :is(#signup-form, #feedback-form) :is(input, select, textarea),
-.content-page #login-form input,
-.code-page .workout-form select {
+:is(#signup-form, #feedback-form, #login-form, .workout-form) :is(input, select, textarea) {
     box-sizing: border-box;
     width: 100%;
+    min-width: 0;
     min-height: 3rem;
-    padding: 0.75rem 0.9rem;
-    border: 1px solid #777;
-    border-radius: 0;
-    background: var(--pf-surface);
-    color: var(--pf-text);
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #86958a;
+    border-radius: 6px;
+    background: var(--pf-paper);
+    color: var(--pf-ink);
     font: inherit;
 }
 
-.home-page #feedback-form select,
+#feedback-form select,
 .code-page .workout-form select {
     appearance: none;
     padding-right: 2.5rem;
-    background-image:
-        linear-gradient(45deg, transparent 50%, #fff 50%),
-        linear-gradient(135deg, #fff 50%, transparent 50%);
+    background-image: linear-gradient(45deg, transparent 50%, #405d44 50%),
+        linear-gradient(135deg, #405d44 50%, transparent 50%);
     background-position: calc(100% - 1.2rem) 52%, calc(100% - 0.85rem) 52%;
     background-size: 0.35rem 0.35rem;
     background-repeat: no-repeat;
 }
 
-.home-page :is(.primary-button, .offer-button, .instagram-button, .whatsapp-button, form button),
+.home-page :is(.instagram-button, .whatsapp-button, form button),
 .code-page :is(.code-hero-button, .workout-form button),
 .content-page :is(.action-link, #login-form button) {
     box-sizing: border-box;
@@ -438,112 +443,165 @@ body.content-page {
     width: fit-content;
     max-width: 100%;
     min-height: 3rem;
-    padding: 0.7rem 1.15rem;
+    padding: 0.65rem 1.1rem;
     border: 1px solid transparent;
-    border-radius: 0;
-    background: var(--pf-yellow);
-    color: var(--pf-background);
+    border-radius: 6px;
+    background: var(--pf-dark);
+    color: var(--pf-dark-text);
     font: inherit;
-    font-weight: 800;
+    font-weight: 750;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
 }
 
-.home-page :is(.primary-button, .offer-button, .instagram-button, form button):hover,
+.home-page #signup-form button,
+.code-page .workout-form button {
+    background: var(--pf-accent);
+    color: var(--pf-ink);
+}
+
+.home-page :is(.instagram-button, .whatsapp-button, form button):hover,
 .code-page :is(.code-hero-button, .workout-form button):hover,
 .content-page :is(.action-link, #login-form button):hover {
-    background: var(--pf-text);
-}
-
-.home-page .whatsapp-button {
-    background: var(--pf-background);
-    color: var(--pf-text);
-}
-
-.home-page .whatsapp-button:hover {
-    background: var(--pf-text);
-    color: var(--pf-background);
+    background: var(--pf-link);
+    color: var(--pf-dark-text);
     transform: none;
 }
 
-.home-page :is(.contact-note, .footer-location, .footer-column span) {
-    color: var(--pf-muted);
+.home-page #signup-form button:hover,
+.code-page .workout-form button:hover {
+    background: var(--pf-dark-text);
+    color: var(--pf-ink);
 }
 
 .home-page .site-footer,
-.code-page .code-footer {
-    border-top: 1px solid var(--pf-line);
-    background: var(--pf-background);
-    color: var(--pf-muted);
+.content-page footer {
+    border-top: 1px solid var(--pf-dark-line);
+    background: var(--pf-dark);
+    color: var(--pf-dark-muted);
 }
 
 .home-page :is(.footer-brand h2, .footer-column h3, .footer-column a, .footer-bottom a) {
-    color: var(--pf-text);
+    color: var(--pf-dark-text);
 }
 
 .home-page :is(.footer-column a, .footer-bottom a):hover {
-    color: var(--pf-yellow);
+    color: var(--pf-accent);
+}
+
+.home-page :is(.footer-location, .footer-column span, .footer-bottom p) {
+    color: var(--pf-dark-muted);
 }
 
 .home-page .footer-column a {
     overflow-wrap: anywhere;
 }
 
+/* Cookie-Hinweis */
+
 .home-page .cookie-banner {
     box-sizing: border-box;
-    inset: auto var(--pf-gutter) 1rem auto;
-    width: min(calc(100% - 2 * var(--pf-gutter)), 31rem);
-    max-height: 55dvh;
-    overflow: auto;
-    border: 1px solid var(--pf-line);
+    position: static;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--pf-dark-line);
     border-radius: 0;
-    background: var(--pf-surface);
-    color: var(--pf-text);
-}
-
-.home-page.menu-open .cookie-banner {
-    visibility: hidden;
+    background: var(--pf-dark-surface);
+    color: var(--pf-dark-text);
+    box-shadow: none;
 }
 
 .home-page .cookie-content {
-    padding: 1rem 1.25rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem 1.25rem;
+    max-width: calc(var(--pf-width) + 2 * var(--pf-gutter));
+    padding: 0.75rem var(--pf-gutter);
+}
+
+.home-page .cookie-content :is(h3, p) {
+    margin: 0;
+    color: var(--pf-dark-text);
+    font-size: 0.9375rem;
+}
+
+.home-page .cookie-content a {
+    color: var(--pf-accent);
 }
 
 .home-page .cookie-actions {
     flex-direction: row;
     gap: 0.65rem;
-    margin-top: 0.85rem;
+    margin: 0;
 }
 
 .home-page .cookie-button {
     width: auto;
     min-height: 2.75rem;
     padding: 0.5rem 0.9rem;
-}
-
-.home-page .cookie-content :is(h3, p) {
-    color: var(--pf-text);
-}
-
-.home-page .cookie-content a {
-    color: var(--pf-yellow);
+    border-radius: 6px;
 }
 
 .home-page .cookie-button.accept {
-    border-radius: 0;
-    background: var(--pf-yellow);
-    color: var(--pf-background);
+    background: var(--pf-accent);
+    color: var(--pf-ink);
 }
 
 .home-page .cookie-button.reject {
-    border: 1px solid #777;
-    border-radius: 0;
-    background: transparent;
-    color: var(--pf-text);
+    border: 1px solid var(--pf-dark-line);
+    color: var(--pf-dark-text);
 }
 
-/* Coden & Lernen */
+.home-page .cookie-content :focus-visible {
+    outline-color: var(--pf-accent);
+}
+
+/* Coden & Lernen und die einfachen Unterseiten */
+
+.page-title-band {
+    box-sizing: border-box;
+    padding: clamp(2.4rem, 6vw, 5rem) var(--pf-gutter);
+    border-bottom: 1px solid var(--pf-line);
+    background: var(--pf-soft);
+    color: var(--pf-ink);
+    text-align: center;
+}
+
+.page-title-band h1 {
+    max-width: var(--pf-width);
+    margin: 0 auto;
+    font: 750 clamp(1.9rem, 4.35vw, 4rem) / 1.09 system-ui, sans-serif;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+}
+
+.page-title-band > p {
+    max-width: 48ch;
+    margin: 1rem auto 0;
+}
+
+.code-page .code-hero {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: var(--pf-page);
+}
+
+.code-page .code-hero-content {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(1.5rem, 5vw, 5rem);
+    width: 100%;
+    max-width: calc(var(--pf-width) + 2 * var(--pf-gutter));
+    padding: var(--pf-section-space) var(--pf-gutter) 0;
+}
 
 .code-page .code-hero-box {
     box-sizing: border-box;
@@ -552,11 +610,25 @@ body.content-page {
     background: transparent;
 }
 
+.code-page .code-hero-box h2,
+.code-page .code-intro h2,
+.code-page .code-article h2 {
+    font: 740 clamp(1.9rem, 3.8vw, 3.5rem) / 1.13 system-ui, sans-serif;
+    letter-spacing: -0.045em;
+}
+
+.code-page .code-hero-box p {
+    max-width: 42ch;
+    margin: 1rem 0 1.4rem;
+    color: var(--pf-muted);
+    line-height: 1.65;
+}
+
 .code-hero-image {
     width: 100%;
-    aspect-ratio: 5 / 4;
-    border-bottom: 4px solid var(--pf-yellow);
-    background: url("images/hero.jpg") right center / 200% auto no-repeat #1d1d1d;
+    aspect-ratio: 16 / 10;
+    border-radius: 10px;
+    background: url("images/hero.jpg") right center / 200% auto no-repeat #202020;
 }
 
 .code-page .code-main {
@@ -569,13 +641,12 @@ body.content-page {
     background: transparent;
 }
 
-.code-page .code-project-card,
-.code-page .code-project-card:nth-child(2),
-.code-page .code-article,
-.code-page .code-tool-panel {
+.code-page :is(.code-project-card, .code-project-card:nth-child(2), .code-article, .code-tool-panel) {
     min-height: 0;
     border: 1px solid var(--pf-line);
-    background: var(--pf-surface);
+    border-radius: 8px;
+    background: var(--pf-paper);
+    color: var(--pf-ink);
 }
 
 .code-page .code-project-card {
@@ -583,7 +654,7 @@ body.content-page {
     gap: 1rem;
 }
 
-.code-page :is(.code-intro > p:not(.section-kicker), .code-project-card p, .code-step p) {
+.code-page :is(.code-intro > p:not(.section-kicker), .code-project-card p, .code-step p, .code-tool-panel > div > p:last-child) {
     color: var(--pf-muted);
 }
 
@@ -591,20 +662,24 @@ body.content-page {
     border-color: var(--pf-line);
 }
 
-.code-page pre,
-.code-page :not(pre) > code {
-    background: #0a0a0a;
-    color: #fff4a0;
+.code-page pre {
+    background: var(--pf-dark);
+    color: #f1e6ab;
 }
 
+.code-page :not(pre) > code,
 .code-page .code-tip,
 .code-page .workout-result {
-    border-color: var(--pf-yellow);
-    background: var(--pf-background);
-    color: var(--pf-text);
+    border-color: var(--pf-line);
+    background: var(--pf-soft);
+    color: var(--pf-ink);
 }
 
-/* Gemeinsamer Rahmen für Coaching, Blog, Fitness und Serviceseiten */
+.code-page .code-footer {
+    border-top: 1px solid var(--pf-line);
+    background: var(--pf-soft);
+    color: var(--pf-muted);
+}
 
 .content-page .subpage-nav {
     display: flex;
@@ -613,26 +688,25 @@ body.content-page {
     align-items: center;
     gap: 0.7rem 1.25rem;
     box-sizing: border-box;
-    padding: 1.2rem max(var(--pf-gutter), calc((100% - var(--pf-width)) / 2));
-    border-bottom: 1px solid var(--pf-line);
+    padding: 1.1rem max(var(--pf-gutter), calc((100% - var(--pf-width)) / 2));
 }
 
 .subpage-nav a {
-    color: var(--pf-text);
+    color: var(--pf-dark-text);
 }
 
 .subpage-nav a:hover {
-    color: var(--pf-yellow);
+    color: var(--pf-accent);
 }
 
 .subpage-nav .subpage-brand {
     font-weight: 800;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
 }
 
-.content-page :is(main, .login-section) {
+.content-page main {
     box-sizing: border-box;
-    width: min(100% - 2 * var(--pf-gutter), 54rem);
+    width: min(calc(100% - 2 * var(--pf-gutter)), 54rem);
     margin: 0 auto;
     padding: var(--pf-section-space) 0;
 }
@@ -641,14 +715,10 @@ body.content-page {
     max-width: 32rem;
 }
 
-.content-page :is(main, .login-section) a:not(.action-link) {
-    color: var(--pf-yellow);
+.content-page main a:not(.action-link) {
+    color: var(--pf-link);
     text-decoration: underline;
-    text-underline-offset: 0.25em;
-}
-
-.content-page :is(main, .login-section) a:not(.action-link):hover {
-    color: var(--pf-text);
+    text-underline-offset: 0.24em;
 }
 
 .content-page main :is(p, li) {
@@ -658,8 +728,8 @@ body.content-page {
 
 .content-page main h2 {
     margin-top: 2rem;
-    font: 800 clamp(1.5rem, 3vw, 2.5rem) / 1.1 var(--pf-title-font);
-    letter-spacing: -0.03em;
+    font: 740 clamp(1.5rem, 3vw, 2.5rem) / 1.1 system-ui, sans-serif;
+    letter-spacing: -0.035em;
 }
 
 .content-page main > :is(article, section) {
@@ -683,7 +753,8 @@ body.content-page {
 .coaching-options article {
     padding: clamp(1.25rem, 3vw, 2rem);
     border: 1px solid var(--pf-line);
-    background: var(--pf-surface);
+    border-radius: 8px;
+    background: var(--pf-paper);
 }
 
 .content-page .coaching-options h2 {
@@ -692,26 +763,19 @@ body.content-page {
 
 .content-page footer {
     padding: 1.25rem var(--pf-gutter);
-    border-top: 1px solid var(--pf-line);
-    color: var(--pf-muted);
     text-align: center;
 }
 
 @media (max-width: 800px) {
-    .home-page .hero-content,
+    .home-page :is(.about, .proof-section, .offer-main-grid),
     .code-page .code-hero-content,
-    .home-page .about,
-    .home-page .proof-section,
     .coaching-options {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
-    .hero-image {
-        max-width: 33rem;
-    }
-
-    .code-hero-image {
-        aspect-ratio: 16 / 9;
+    .home-page .about-image,
+    .home-page .hero-image {
+        max-width: 30rem;
     }
 
     .code-page .code-step {
@@ -728,11 +792,18 @@ body.content-page {
 
     .hero-nav .nav-brand {
         font-size: 0.875rem;
-        letter-spacing: 0.28em;
     }
 
     .hero-nav .nav-toggle {
         flex-shrink: 0;
+    }
+
+    .signup-fields {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .home-page #signup-form button {
+        width: 100%;
     }
 }
 

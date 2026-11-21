@@ -59,32 +59,133 @@
 
 <div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
 
-<header id="top" class="hero">
-    <div class="page-title-band">
-        <h1>Movement &amp; Mobility Coaching</h1>
-    </div>
-    <div class="hero-content">
-        <div class="hero-copy">
-            <p class="eyebrow">1:1 Coaching · Bruchsal &amp; online</p>
-            <h2>Bewegung für den Körper.<br>Training für den Kopf.</h2>
+<aside id="cookie-banner" class="cookie-banner" aria-labelledby="cookie-title" hidden>
+    <div class="cookie-content">
+        <div class="cookie-copy">
+            <h3 id="cookie-title">Cookies und Privatsphäre</h3>
             <p>
-                Trainiere Kraft, Beweglichkeit und Kontrolle. Mit einem Plan, der zu dir
-                passt – vom Einstieg bis zu Skills wie dem freien Handstand.
+                Google Analytics wird nur aktiviert, wenn du zustimmst.
+                <a href="datenschutz.html">Datenschutzerklärung</a>
             </p>
-            <div class="hero-actions">
-                <a class="primary-button" href="#kontakt">Kostenloses Erstgespräch</a>
-                <a class="hero-secondary" href="#fuer-wen">Für wen ist das?</a>
-            </div>
         </div>
+        <div class="cookie-actions">
+            <button id="cookie-accept" class="cookie-button accept" type="button">Akzeptieren</button>
+            <button id="cookie-reject" class="cookie-button reject" type="button">Ablehnen</button>
+        </div>
+    </div>
+</aside>
 
-        <div class="hero-image">
-            <img src="images/hero.jpg" alt="Ivan beim freien Handstand auf einem Holzpfahl am Meer"
-                 width="3840" height="2160" fetchpriority="high">
-        </div>
+<header id="top" class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Movement &amp; Mobility Coaching</p>
+        <h1>Bewegung für den Körper.<br>Training für den Kopf.</h1>
+        <p class="hero-lead">
+            Entwickle Kraft, Beweglichkeit und Kontrolle. Mit persönlichem Coaching
+            in Bruchsal und online.
+        </p>
+
+        <section id="newsletter" class="newsletter-content" aria-labelledby="guide-title">
+            <h2 id="guide-title">Dein kostenloser Handstand-Guide</h2>
+            <p>Das PDF mit Einstiegsübungen bekommst du per E-Mail, dazu den Newsletter mit Trainingstipps.</p>
+
+            <form id="signup-form">
+                <label for="email">E-Mail-Adresse</label>
+                <div class="signup-fields">
+                    <input type="email" id="email" placeholder="Deine E-Mail-Adresse" autocomplete="email" required>
+                    <button type="submit">Guide anfordern</button>
+                </div>
+            </form>
+
+            <div id="download-area" aria-live="polite"></div>
+        </section>
+
+        <a class="hero-secondary" href="#angebot">Coaching entdecken</a>
     </div>
 </header>
 
 <main>
+<section id="ueber-ivan" class="about">
+    <div class="about-text">
+        <p class="eyebrow">Über mich</p>
+        <h2>Ich bin Ivan Gamper.</h2>
+
+        <p>
+            Vom Schwimmbecken ins Eisen, von CrossFit zum Handstand:
+            Mein Weg führte über Bodybuilding und CrossFit hin zur Mobility.
+            Heute liegt mein Fokus auf Handstand, Schultern und kontrollierten Bewegungen über Kopf.
+        </p>
+
+        <p>
+            Russische Wurzeln, schwäbische Heimat und eine direkte Art.
+            Im Coaching zeige ich dir Übungen und erkläre dir, wie du dein
+            Training mit der Zeit selbstständig steuern kannst.
+        </p>
+
+        <div class="about-stats">
+            <div class="about-stat">
+                <strong>20+</strong>
+                <span>Jahre im Sport</span>
+            </div>
+            <div class="about-stat">
+                <strong>10+</strong>
+                <span>Jahre Handstand &amp; Mobility</span>
+            </div>
+            <div class="about-stat">
+                <strong>1:1</strong>
+                <span>Voller Fokus auf dich</span>
+            </div>
+        </div>
+
+        <a href="#skills" class="about-link">Was du bei mir lernen kannst</a>
+    </div>
+
+    <figure class="about-image">
+        <img src="images/about.jpg" alt="Ivan beim Handstand" loading="lazy">
+    </figure>
+</section>
+
+<section id="angebot" class="offer-section">
+    <div class="section-intro">
+        <h2>So kannst du mit mir trainieren.</h2>
+        <p>Die Preise für persönliches Coaching besprechen wir im kostenlosen Erstgespräch.</p>
+    </div>
+
+    <div class="offer-main-grid">
+        <article class="main-offer-card">
+            <h3>Online-Coaching</h3>
+            <p>
+                Ein individueller Trainingsplan, Videocalls und Feedback zu deinen
+                Übungsvideos. Du trainierst dort, wo es in deinen Alltag passt.
+            </p>
+            <a
+                class="offer-button"
+                href="https://wa.me/4915754977206?text=Hallo%20Ivan%2C%20ich%20m%C3%B6chte%20dir%20ein%20Video%20zur%20Bewegungsanalyse%20schicken."
+                target="_blank"
+                rel="noopener noreferrer"
+            >Video zur Analyse senden</a>
+        </article>
+
+        <article class="main-offer-card">
+            <h3>Personal Training</h3>
+            <p>
+                1:1 Training in Bruchsal und Umgebung. Wir arbeiten an deiner Technik
+                und passen Übungen und Trainingsplan an dein Ziel an.
+            </p>
+            <a class="offer-button" href="#kontakt">Erstgespräch vereinbaren</a>
+        </article>
+
+        <article class="main-offer-card">
+            <h3>Selbst loslegen</h3>
+            <p>
+                Starte mit dem kostenlosen Handstand-Guide oder stelle dir im Browser
+                ein kurzes Workout für Kraft oder Mobility zusammen.
+            </p>
+            <a class="offer-button" href="#newsletter">Handstand-Guide anfordern</a>
+            <a class="offer-button" href="code/index.html#workout-demo">Workout-Generator öffnen</a>
+        </article>
+    </div>
+</section>
+
 <section id="fuer-wen" class="for-whom">
     <div class="section-intro">
         <p class="eyebrow">Für WEN?</p>
@@ -284,181 +385,24 @@
 
 
 
-<section id="ueber-ivan" class="about">
-
-            <div class="about-image">
-                <img src="images/about.jpg" alt="Ivan beim Handstand" loading="lazy">
-            </div>
-
-            <div class="about-text">
-
-                <p class="eyebrow">ÜBER IVAN</p>
-
-                <h2>
-                    20+ Jahre Sport und Coaching.<br>
-                </h2>
-
-                <p>
-                    Vom Schwimmbecken ins Eisen, von CrossFit zum Handstand:
-                    Ivans Weg führte über das Bodybuilding und CrossFit hin zur
-                    Mobility – mit klarem Fokus auf Schultern, Überkopf und das,
-                    was viele jahrelang vernachlässigen.
-                </p>
-
-                <p>
-                    Russische Wurzeln, schwäbische Heimat, eine klare Ansage:
-                    <strong>Keine Ausreden, aber auch kein Bullshit.</strong>
-                    Keine Wand voll Zertifikate – dafür Skills, die du auf Video
-                    sehen kannst. Proof statt Papier.
-                </p>
-
-                <div class="about-stats">
-
-                    <div class="about-stat">
-                        <strong>20+</strong>
-                        <span>Jahre im Sport</span>
-                    </div>
-
-                    <div class="about-stat">
-                        <strong>10+</strong>
-                        <span>Jahre Handstand & Mobility</span>
-                    </div>
-
-                    <div class="about-stat">
-                        <strong>1:1</strong>
-                        <span>Voller Fokus auf dich</span>
-                    </div>
-
-                </div>
-
-                <a href="#skills" class="about-link">
-                    Sieh dir die Skills an
-                </a>
-
-            </div>
-
-</section>
-
-<section id="angebot" class="offer-section">
-
-    <div class="section-intro">
-        <p class="eyebrow">ANGEBOT</p>
-
-        <h2>
-            Wähl deinen Weg.<br>
-            Den Rest klären wir.
-        </h2>
-
-        <p>
-            Preise besprechen wir im Erstgespräch –
-            abgestimmt auf dein Ziel, nicht von der Stange.
-        </p>
-    </div>
-
-    <div class="offer-main-grid">
-
-        <article class="main-offer-card dark">
-
-            <h3>My Approach</h3>
-
-            <p>
-                Mein Ziel ist es, dir nicht nur effektive Übungen zu zeigen, sondern
-                auch zu vermitteln, wie du dein Training langfristig selbstständig
-                verstehen und steuern kannst.
-            </p>
-
-            <ul>
-                <li>Individuelle Trainingsstrategie für deine Ziele und Voraussetzungen</li>
-                <li>Videoanalysen und Spiegelarbeit zur Verbesserung deiner Bewegungskontrolle</li>
-                <li>Muskelaufbau und Ausgleich von Asymmetrien</li>
-                <li>Individuelle Lösungswege bei körperlichen Einschränkungen</li>
-                <li>Flexible Orte & Zeiten – outdoor, im Park oder bei dir in Bruchsal & Umgebung</li>
-            </ul>
-
-            <a
-                    href="https://wa.me/4915754977206?text=Hallo%20Ivan%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20kostenloses%20Erstgespr%C3%A4ch."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="offer-button dark-button"
-            >
-                Erstgespräch starten
-            </a>
-
-        </article>
-
-        <article class="main-offer-card light">
-
-            <h3>Online-Coaching</h3>
-
-            <p>
-                Ortsunabhängig trainieren –
-                Videocall plus individueller Plan.
-            </p>
-
-            <ul>
-                <li>Coaching per Videocall</li>
-                <li>Plan, der zu deinem Alltag passt</li>
-                <li>Feedback zu deinen Übungs-Videos</li>
-            </ul>
-
-            <a
-                    href="https://wa.me/4915754977206?text=Hallo%20Ivan%2C%20ich%20m%C3%B6chte%20dir%20ein%20Video%20zur%20Bewegungsanalyse%20schicken."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="offer-button light-button"
-            >
-                Video zur Analyse senden
-            </a>
-
-        </article>
-
-    </div>
-
-    <div class="coming-soon">
-
-        <p class="coming-label">BALD VERFÜGBAR</p>
-
-        <div class="coming-grid">
-
-            <div>
-                <h3>Online-Kursportal</h3>
-                <p>Skills im eigenen Tempo</p>
-            </div>
-
-            <div>
-                <h3>Shop</h3>
-                <p>Tools & Programme</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 <section id="proof" class="proof-section">
-
-    <div class="section-intro">
-        <p class="eyebrow">PROOF STATT PAPIER</p>
-
-        <h2>
-            Skills auf Video – von Ivan selbst.
-        </h2>
-
-        <p>
-            Mehr Einblicke in Ivans Training findest du auf Instagram.
-        </p>
-    </div>
-
-    <a
+    <div class="proof-copy">
+        <p class="eyebrow">Training in Bewegung</p>
+        <h2>Meine Skills auf Video.</h2>
+        <p>Auf Instagram zeige ich Handstand, Mobility und Einblicke in mein Training.</p>
+        <a
             href="https://www.instagram.com/vanja_gamper/"
             target="_blank"
             rel="noopener noreferrer"
             class="instagram-button"
-    >
-        ◎ &nbsp; Mehr auf Instagram – @vanja_gamper
-    </a>
+        >Ivan auf Instagram</a>
+    </div>
 
+    <div class="hero-image">
+        <img src="images/hero.jpg" alt="Ivan beim freien Handstand auf einem Holzpfahl am Meer"
+             width="3840" height="2160" loading="lazy">
+    </div>
 </section>
 
 <section id="kontakt" class="contact-section">
@@ -467,10 +411,7 @@
 
         <p class="eyebrow">BEREIT LOSZULEGEN?</p>
 
-        <h2>
-            Keine Ausreden.<br>
-            Lass uns reden.
-        </h2>
+        <h2>Erzähl mir, was du trainieren möchtest.</h2>
 
         <p>
             Kostenloses Erstgespräch auf WhatsApp –
@@ -495,51 +436,6 @@
 </section>
 
 
-<!-- PDF & Newsletter -->
-
-<section id="newsletter" class="newsletter-section">
-
-    <div class="newsletter-content">
-
-        <p class="eyebrow">KOSTENLOSER DOWNLOAD</p>
-
-        <h2>
-            Dein Weg zum<br>
-            ersten Handstand
-        </h2>
-
-        <p>
-            Sichere dir mein kostenloses Handstand-PDF mit hilfreichen
-            Übungen und ersten Impulsen für dein Training.
-            Abonniere gleichzeitig den Newsletter und erhalte weitere
-            Tipps rund um Kraft, Mobility und Movement.
-        </p>
-
-        <form id="signup-form">
-
-            <label for="email">E-Mail-Adresse</label>
-            <input
-                    type="email"
-                    id="email"
-                    placeholder="Deine E-Mail-Adresse"
-                    required
-            >
-
-            <button type="submit">
-                PDF anfordern
-            </button>
-
-        </form>
-
-        <div id="download-area" aria-live="polite"></div>
-
-        <span class="contact-note">
-            Kein Spam. Nur ausgewählte Inhalte und Trainingsimpulse.
-        </span>
-
-    </div>
-
-</section>
 
 
 <!-- Feedback -->
@@ -689,39 +585,6 @@
 
 <script src="script.js?v=20261206-1"></script>
 
-
-<!-- Cookie-Consent-Banner -->
-
-<div id="cookie-banner" class="cookie-banner" hidden>
-
-    <div class="cookie-content">
-
-        <h3>Deine Privatsphäre ist wichtig</h3>
-
-        <p>
-            Diese Website verwendet Google Analytics, um die Nutzung der
-            Website anonymisiert auszuwerten und kontinuierlich zu verbessern.
-            Google Analytics wird nur aktiviert, wenn du zustimmst.
-        </p>
-
-        <p>
-            Weitere Informationen findest du in unserer
-            <a href="datenschutz.html">Datenschutzerklärung</a>.
-        </p>
-
-        <div class="cookie-actions">
-            <button id="cookie-accept" class="cookie-button accept">
-                Akzeptieren
-            </button>
-
-            <button id="cookie-reject" class="cookie-button reject">
-                Ablehnen
-            </button>
-        </div>
-
-    </div>
-
-</div>
 
 <script src="cookie-consent.js?v=20261105-1"></script>
 </body>
