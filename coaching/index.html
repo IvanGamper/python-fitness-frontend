@@ -3,41 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coaching für Kraft, Mobility und Handstand. Individuelle Trainingspläne und persönliche Begleitung online oder in Bruchsal.">
     <title>Coaching – Python Fitness</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../design.css">
+    <link rel="stylesheet" href="coaching.css">
 </head>
-<body class="content-page">
+<body class="content-page coaching-page">
 
 <nav class="subpage-nav" aria-label="Hauptnavigation">
     <a class="subpage-brand" href="../index.html">PYTHON FITNESS</a>
-    <a href="../index.html#kontakt">Erstgespräch</a>
+    <div class="coaching-nav-links">
+        <a href="../programme/index.html">Programme</a>
+        <a href="index.html" aria-current="page">Coaching</a>
+        <a href="../index.html#ueber-ivan" lang="en">About</a>
+    </div>
 </nav>
 
-<header class="page-title-band">
-    <h1>Coaching</h1>
-</header>
+<main class="coaching-main">
+    <div class="coaching-layout">
+        <section class="coaching-process" aria-labelledby="coaching-title">
+            <p class="coaching-kicker">Online oder in Bruchsal</p>
+            <h1 id="coaching-title">So läuft dein Coaching ab.</h1>
+            <p class="coaching-intro">
+                Wir bauen dein Training um deine Ziele und deinen Alltag herum.
+                Ob Krafttraining, Mobility oder Handstand, du weißt, woran du arbeitest und warum.
+            </p>
 
-<main>
-    <h2>Dein Training vor Ort oder online.</h2>
-    <p>Trainiere Kraft, Mobility und Skills mit einem Plan, der zu deinen Zielen und deinem Alltag passt.</p>
+            <ol class="coaching-steps">
+                <li>
+                    <h2>Du erzählst mir, was du vorhast.</h2>
+                    <p>
+                        In der Anfrage nennst du dein Ziel, deine Erfahrung und wie viel Zeit du fürs Training hast.
+                        Im Erstgespräch klären wir offene Fragen. Bei Bedarf schaue ich mir ein kurzes Übungsvideo an.
+                    </p>
+                </li>
+                <li>
+                    <h2>Ich erstelle deinen Trainingsplan.</h2>
+                    <p>
+                        Du bekommst Übungen mit Sätzen, Wiederholungen und Hinweisen zur Technik.
+                        Der Plan richtet sich danach, wie oft, wo und mit welcher Ausstattung du trainierst.
+                    </p>
+                </li>
+                <li>
+                    <h2>Du setzt den Plan um.</h2>
+                    <p>
+                        Mit laufendem Coaching schauen wir uns deine Technik und Fortschritte gemeinsam an.
+                        Ich gebe dir Feedback zu deinen Videos und passe den Plan bei Bedarf an.
+                    </p>
+                </li>
+            </ol>
+        </section>
 
-    <div class="coaching-options">
-        <article>
-            <h2>1:1 in Bruchsal</h2>
-            <p>Personal Training in Bruchsal und Umgebung, zum Beispiel draußen im Park oder bei dir vor Ort.</p>
-        </article>
-        <article>
-            <h2>Online-Coaching</h2>
-            <p>Ein individueller Trainingsplan, Videocalls und Feedback zu deinen Übungsvideos.</p>
-        </article>
+        <section class="coaching-packages" aria-labelledby="packages-title">
+            <h2 id="packages-title">Zwei Coaching-Optionen</h2>
+
+            <article class="coaching-package">
+                <h3>Individueller Trainingsplan</h3>
+                <p>Für dich, wenn du einen Plan für dein Ziel möchtest und ihn selbstständig umsetzen willst.</p>
+                <ul>
+                    <li>Übungen und Trainingsumfang passend zu deinem Alltag</li>
+                    <li>Hinweise zur Technik und zum Einstieg</li>
+                </ul>
+                <p class="coaching-price">Preis auf Anfrage</p>
+                <a class="action-link" href="#anfrage" data-coaching-offer="trainingsplan">Trainingsplan anfragen</a>
+            </article>
+
+            <article class="coaching-package coaching-package-ongoing">
+                <h3>Plan &amp; laufendes Coaching</h3>
+                <p>Für dich, wenn du regelmäßiges Feedback und Unterstützung beim Training möchtest.</p>
+                <ul>
+                    <li>Individueller Trainingsplan</li>
+                    <li>Rückmeldung zu Übungsvideos und Anpassungen am Plan</li>
+                </ul>
+                <p class="coaching-price">Preis auf Anfrage</p>
+                <a class="action-link" href="#anfrage" data-coaching-offer="coaching">Coaching anfragen</a>
+            </article>
+        </section>
     </div>
 
-    <a class="action-link" href="../index.html#kontakt">Kostenloses Erstgespräch</a>
-    <p><a href="../index.html#angebot">Zum Angebot</a></p>
+    <section class="coaching-fit" aria-labelledby="fit-title">
+        <div>
+            <h2 id="fit-title">Für wen ist das Coaching?</h2>
+            <p>Für dich, wenn du gezielt trainieren und verstehen möchtest, wie du Fortschritte machst.</p>
+        </div>
+        <ul>
+            <li>Du möchtest im Gym sauberer trainieren und gezielt Muskeln aufbauen.</li>
+            <li>Du willst Kraft und Beweglichkeit für Skills wie Handstand, Spagat oder Backbend entwickeln.</li>
+            <li>Du suchst angepasstes Schultertraining bei Beschwerden oder nach einer Reha.</li>
+        </ul>
+    </section>
+
+    <section id="anfrage" class="coaching-inquiry" aria-labelledby="inquiry-title">
+        <div class="coaching-inquiry-intro">
+            <h2 id="inquiry-title">Erzähl mir von deinem Ziel.</h2>
+            <p>Die erste Anfrage ist kostenlos und unverbindlich. Persönliche Beschwerden besprechen wir im Erstgespräch.</p>
+            <a id="coaching-direct" href="https://wa.me/4915754977206" target="_blank" rel="noopener">
+                Direkt per WhatsApp schreiben
+            </a>
+        </div>
+
+        <div>
+            <form id="coaching-form" class="coaching-form" hidden>
+                <div class="coaching-field">
+                    <label for="coaching-offer">Angebot</label>
+                    <select id="coaching-offer" name="angebot">
+                        <option value="offen">Ich bin noch offen</option>
+                        <option value="trainingsplan">Individueller Trainingsplan</option>
+                        <option value="coaching">Plan &amp; laufendes Coaching</option>
+                    </select>
+                </div>
+
+                <div class="coaching-field">
+                    <label for="coaching-goal">Was ist dein Trainingsziel?</label>
+                    <textarea id="coaching-goal" name="ziel" rows="3" maxlength="280"
+                              placeholder="Zum Beispiel einen freien Handstand lernen" required></textarea>
+                </div>
+
+                <div class="coaching-form-row">
+                    <div class="coaching-field">
+                        <label for="coaching-experience">Trainingserfahrung <span>(optional)</span></label>
+                        <select id="coaching-experience" name="erfahrung">
+                            <option value="">Bitte wählen</option>
+                            <option value="Ich steige gerade ein">Ich steige gerade ein</option>
+                            <option value="Ich trainiere bereits regelmäßig">Ich trainiere bereits regelmäßig</option>
+                            <option value="Ich starte wieder nach einer Pause">Ich starte wieder nach einer Pause</option>
+                        </select>
+                    </div>
+
+                    <div class="coaching-field">
+                        <label for="coaching-time">Zeit pro Woche <span>(optional)</span></label>
+                        <input id="coaching-time" name="zeit" type="text" maxlength="80" placeholder="Zum Beispiel 2 × 45 Minuten">
+                    </div>
+                </div>
+
+                <button class="action-link" type="submit">Nachricht ansehen</button>
+            </form>
+
+            <div id="coaching-preview" class="coaching-preview" hidden>
+                <h3 id="coaching-preview-title" tabindex="-1">Deine Nachricht</h3>
+                <p id="coaching-message"></p>
+                <a id="coaching-send" class="action-link" target="_blank" rel="noopener">In WhatsApp öffnen</a>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>Python Fitness · Movement &amp; Mobility Coaching</footer>
-
+<script src="anfrage.js"></script>
 </body>
 </html>

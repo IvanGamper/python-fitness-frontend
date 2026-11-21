@@ -65,6 +65,17 @@ body.content-page {
     background: var(--pf-dark);
 }
 
+@media (min-width: 1280px) {
+    .home-page .hero-nav {
+        justify-content: space-between;
+        padding-inline: max(var(--pf-gutter), calc((100% - var(--pf-width)) / 2));
+    }
+
+    .home-page .nav-panel-links {
+        gap: clamp(1.5rem, 3vw, 2.75rem);
+    }
+}
+
 .hero-nav .nav-panel-header,
 .hero-nav .nav-brand:is(:hover, :focus-visible),
 .hero-nav .nav-panel :is(.nav-panel-links, .nav-panel-secondary) a:is(:hover, :focus-visible) {
@@ -196,7 +207,7 @@ body.content-page {
     clip-path: none;
 }
 
-.home-page :is(main > section[id], #top, #newsletter, #kontakt) {
+.home-page :is(main > section[id], #top, #newsletter, #programme, #kontakt) {
     scroll-margin-top: var(--pf-nav-height);
 }
 
