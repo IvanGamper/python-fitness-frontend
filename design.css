@@ -20,6 +20,11 @@
     --pf-nav-height: 78px;
 }
 
+html {
+    /* Gleicher Platz für die Scrollleiste auf kurzen und langen Seiten. */
+    scrollbar-gutter: stable;
+}
+
 body {
     margin: 0;
     background: var(--pf-page);
@@ -31,15 +36,15 @@ main {
     display: block;
 }
 
-body.home-page {
-    padding-top: var(--pf-nav-height);
-}
-
 body.code-page,
 body.content-page {
     padding-top: 0;
     background: var(--pf-page);
     color: var(--pf-ink);
+}
+
+body.site-page {
+    padding-top: var(--pf-nav-height);
 }
 
 :where(a, button, input, select, textarea):focus-visible {
@@ -48,8 +53,7 @@ body.content-page {
 }
 
 .hero-nav,
-.code-page .hero-nav,
-.content-page .subpage-nav {
+.code-page .hero-nav {
     border-bottom: 1px solid var(--pf-dark-line);
     background: var(--pf-dark);
     color: var(--pf-dark-text);
@@ -65,13 +69,21 @@ body.content-page {
     background: var(--pf-dark);
 }
 
-@media (min-width: 1280px) {
-    .home-page .hero-nav {
-        justify-content: space-between;
-        padding-inline: max(var(--pf-gutter), calc((100% - var(--pf-width)) / 2));
-    }
+.site-nav {
+    position: fixed;
+    top: 0;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-inline: var(--pf-gutter);
+}
 
-    .home-page .nav-panel-links {
+.site-nav .nav-panel-links a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.28em;
+}
+
+@media (min-width: 1280px) {
+    .site-nav .nav-panel-links {
         gap: clamp(1.5rem, 3vw, 2.75rem);
     }
 }
@@ -92,7 +104,7 @@ body.content-page {
     background: var(--pf-dark-text);
 }
 
-:is(.hero-nav, .home-page .hero, .offer-section, .subpage-nav) :focus-visible {
+:is(.hero-nav, .home-page .hero, .offer-section) :focus-visible {
     outline-color: var(--pf-accent);
 }
 
@@ -690,29 +702,6 @@ body.content-page {
     border-top: 1px solid var(--pf-line);
     background: var(--pf-soft);
     color: var(--pf-muted);
-}
-
-.content-page .subpage-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.7rem 1.25rem;
-    box-sizing: border-box;
-    padding: 1.1rem max(var(--pf-gutter), calc((100% - var(--pf-width)) / 2));
-}
-
-.subpage-nav a {
-    color: var(--pf-dark-text);
-}
-
-.subpage-nav a:hover {
-    color: var(--pf-accent);
-}
-
-.subpage-nav .subpage-brand {
-    font-weight: 800;
-    letter-spacing: 0.14em;
 }
 
 .content-page main {

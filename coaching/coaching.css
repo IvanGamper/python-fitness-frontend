@@ -1,14 +1,3 @@
-.coaching-nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem clamp(1rem, 3vw, 2rem);
-}
-
-.coaching-nav-links [aria-current="page"] {
-    text-decoration: underline;
-    text-underline-offset: 0.28em;
-}
-
 .coaching-page .coaching-main {
     width: min(calc(100% - 2 * var(--pf-gutter)), 68rem);
 }
@@ -124,7 +113,7 @@
 }
 
 .coaching-page .coaching-main > .coaching-inquiry {
-    scroll-margin-top: 1.5rem;
+    scroll-margin-top: calc(var(--pf-nav-height) + 1.5rem);
     background: var(--pf-paper);
 }
 

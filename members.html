@@ -5,13 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitgliederbereich – Python Fitness</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="design.css?v=navigation-1">
 </head>
-<body class="content-page">
+<body class="content-page site-page">
 
-<nav class="subpage-nav" aria-label="Hauptnavigation">
-    <a class="subpage-brand" href="index.html">PYTHON FITNESS</a>
+<nav class="hero-nav site-nav" aria-label="Hauptnavigation">
+    <a class="nav-brand" href="index.html#top" aria-label="Python Fitness Startseite">
+        PYTHON FITNESS
+    </a>
+
+    <button
+            id="nav-toggle"
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+            aria-label="Menü öffnen"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div id="nav-panel" class="nav-panel">
+        <div class="nav-panel-header">
+            <span>MENÜ</span>
+            <button id="nav-close" class="nav-close" type="button" aria-label="Menü schließen">×</button>
+        </div>
+
+        <div class="nav-panel-links">
+            <a href="programme/index.html">Programme</a>
+            <a href="coaching/index.html">Coaching</a>
+            <a href="index.html#ueber-ivan" lang="en">About</a>
+        </div>
+    </div>
 </nav>
+
+<div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
 
 <header class="page-title-band">
     <h1>Mitgliederbereich</h1>
@@ -20,5 +50,6 @@
 <main>
     <p>Der Mitgliederbereich ist noch nicht eingerichtet.</p>
 </main>
+<script src="script.js?v=20261206-1"></script>
 </body>
 </html>
