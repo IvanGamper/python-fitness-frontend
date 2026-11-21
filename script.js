@@ -8,12 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const backdrop = document.getElementById("nav-backdrop");
 
     if (toggle && panel) {
+        const desktopMenu = window.matchMedia("(min-width: 1280px)");
+
         const setMenuState = (isOpen) => {
             panel.classList.toggle("open", isOpen);
             document.body.classList.toggle("menu-open", isOpen);
             toggle.setAttribute("aria-expanded", String(isOpen));
             toggle.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
-            panel.setAttribute("aria-hidden", String(!isOpen));
             backdrop?.classList.toggle("open", isOpen);
         };
 
@@ -23,6 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         closeMenu?.addEventListener("click", () => setMenuState(false));
         backdrop?.addEventListener("click", () => setMenuState(false));
+
+        desktopMenu.addEventListener("change", (event) => {
+            if (event.matches) setMenuState(false);
+        });
 
         panel.querySelectorAll("a").forEach((link) => {
             link.addEventListener("click", () => setMenuState(false));

@@ -1514,13 +1514,15 @@ body > section:not([class]) {
     padding: 1.5rem clamp(1.5rem, 4vw, 3rem) 2rem;
     overflow-y: auto;
     transform: translateX(100%);
+    visibility: hidden;
     background: #111;
     color: #fff;
-    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.38s;
 }
 
 .nav-panel.open {
     transform: translateX(0);
+    visibility: visible;
 }
 
 .nav-panel-header {
@@ -1608,6 +1610,78 @@ body > section:not([class]) {
 
 body.menu-open {
     overflow: hidden;
+}
+
+/* In breiten Fenstern stehen dieselben Links direkt in der Kopfzeile. */
+@media (min-width: 1280px) {
+    .hero-nav {
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: clamp(1.5rem, 3vw, 3.5rem);
+    }
+
+    .hero-nav > a {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .nav-toggle,
+    .nav-panel-header,
+    .nav-backdrop {
+        display: none;
+    }
+
+    .hero-nav .nav-panel {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        height: auto;
+        gap: clamp(1.25rem, 2.2vw, 2.5rem);
+        padding: 0;
+        overflow: visible;
+        transform: none;
+        visibility: visible;
+        background: transparent;
+        transition: none;
+    }
+
+    .nav-panel-links,
+    .nav-panel-secondary {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.85rem, 1.4vw, 1.5rem);
+        padding: 0;
+        border: 0;
+    }
+
+    .nav-panel .nav-panel-links a,
+    .nav-panel .nav-panel-secondary a,
+    .nav-panel .nav-panel-cta {
+        padding: 0.65rem 0;
+        background: transparent;
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: normal;
+        line-height: 1.25;
+        white-space: nowrap;
+    }
+
+    .nav-panel .nav-panel-links a:hover,
+    .nav-panel .nav-panel-links a:focus-visible,
+    .nav-panel .nav-panel-secondary a:hover,
+    .nav-panel .nav-panel-secondary a:focus-visible {
+        color: #c8dd72;
+        transform: none;
+    }
+
+    .nav-panel .nav-panel-cta {
+        margin: 0;
+        padding: 0.65rem 0.9rem;
+        background: #c8dd72;
+        color: #111;
+    }
 }
 
 /* =========================
