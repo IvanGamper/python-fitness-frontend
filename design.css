@@ -89,6 +89,7 @@ body.content-page {
     letter-spacing: -0.04em;
     text-transform: uppercase;
     text-wrap: balance;
+    overflow-wrap: anywhere;
 }
 
 .page-title-band > p {
