@@ -1717,11 +1717,19 @@ body.menu-open {
 }
 
 .code-intro > p:last-child,
-.code-article-heading > p:last-child {
+.code-article-heading > p:not(.section-kicker) {
     max-width: 60ch;
     margin: 1.4rem 0 0;
     font-size: 1.1rem;
     line-height: 1.65;
+}
+
+.code-demo-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #465218;
+    font-weight: 800;
+    text-underline-offset: 0.2em;
 }
 
 .code-projects {
@@ -1822,6 +1830,7 @@ body.menu-open {
 
 .code-tool-panel {
     margin-top: clamp(4rem, 8vw, 8rem);
+    scroll-margin-top: 1rem;
     padding: clamp(1.5rem, 4vw, 3.5rem);
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(330px, 1.1fr);
@@ -1845,19 +1854,19 @@ body.menu-open {
     line-height: 1.65;
 }
 
-.exercise-tool-form {
+.workout-form {
     display: grid;
     gap: 0.55rem;
     align-content: start;
 }
 
-.exercise-tool-form label {
+.workout-form label {
     margin-top: 0.7rem;
     font-size: 0.82rem;
     font-weight: 800;
 }
 
-.exercise-tool-form input {
+.workout-form select {
     width: 100%;
     box-sizing: border-box;
     padding: 0.9rem 1rem;
@@ -1868,7 +1877,7 @@ body.menu-open {
     font: inherit;
 }
 
-.exercise-tool-form button {
+.workout-form button {
     margin-top: 1rem;
     padding: 1rem;
     border: 0;
@@ -1880,16 +1889,22 @@ body.menu-open {
     cursor: pointer;
 }
 
-.exercise-tool-form button:hover,
-.exercise-tool-form button:focus-visible {
+.workout-form button:hover,
+.workout-form button:focus-visible {
     background: #fff;
 }
 
-.exercise-tool-form #output {
-    min-height: 1.5rem;
+.workout-result {
     margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 1rem 1.25rem 1rem 2.75rem;
+    border: 1px solid #65723a;
     color: #d7e99a;
     line-height: 1.6;
+}
+
+.workout-result li + li {
+    margin-top: 0.35rem;
 }
 
 .code-footer {

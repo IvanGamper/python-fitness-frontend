@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Python Fitness Lab: kleine Python-Projekte für Training und Bewegung.">
     <title>Coden & Lernen – Python Fitness</title>
-    <link rel="stylesheet" href="../style.css?v=20261121-1">
+    <link rel="stylesheet" href="../style.css?v=20261121-2">
 </head>
 <body class="code-page">
 
@@ -66,6 +66,7 @@
             <p class="section-kicker">SCHRITT FÜR SCHRITT</p>
             <h2>Einen Workout-Generator mit Python coden.</h2>
             <p>Unser erstes Projekt wählt zufällig Übungen aus einer Liste aus. So entsteht mit wenigen Zeilen ein kleines Workout.</p>
+            <a class="code-demo-link" href="#workout-demo">Generator ausprobieren</a>
         </div>
 
         <section class="code-step">
@@ -74,8 +75,14 @@
                 <h3>Übungen sammeln</h3>
                 <p>Wir legen zuerst fest, welche Übungen zu welchem Fokus gehören. Ein Dictionary ist dafür praktisch: links steht der Fokus, rechts die passende Liste.</p>
                 <pre><code>UEBUNGEN = {
-    "mobility": ["Tiefe Hocke", "Cossack Squat", "World's Greatest Stretch"],
-    "kraft": ["Kniebeuge", "Liegestütz", "Plank"]
+    "mobility": [
+        "Tiefe Hocke", "Cossack Squat", "World's Greatest Stretch",
+        "90/90-Hüftwechsel", "Brustwirbelsäulen-Rotation"
+    ],
+    "kraft": [
+        "Kniebeuge", "Liegestütz", "Plank",
+        "Rückwärts-Ausfallschritt", "Glute Bridge"
+    ]
 }</code></pre>
             </div>
         </section>
@@ -97,7 +104,7 @@ def erstelle_workout(fokus, anzahl=3):
             <div class="code-step-number">3</div>
             <div>
                 <h3>Workout ausgeben</h3>
-                <p>Jetzt rufen wir die Funktion auf und zeigen jede Übung an. Beim nächsten Start kann die Reihenfolge anders sein – genau das macht es abwechslungsreich.</p>
+                <p>Jetzt rufen wir die Funktion auf und zeigen jede Übung an. Beim nächsten Start kann die Auswahl anders ausfallen. Ändere <code>"mobility"</code> in <code>"kraft"</code>, um den Schwerpunkt zu wechseln.</p>
                 <pre><code>workout = erstelle_workout("mobility")
 
 print("Dein heutiges Workout:")
@@ -109,20 +116,23 @@ for uebung in workout:
         <aside class="code-tip"><strong>Nächster Schritt:</strong> Ergänze eigene Kategorien wie <code>"handstand"</code> oder <code>"rücken"</code>. Du kannst später auch Wiederholungen, Zeiten oder Schwierigkeitsgrade hinzufügen.</aside>
     </article>
 
-    <section class="code-tool-panel" aria-labelledby="exercise-tool-title">
+    <section class="code-tool-panel" id="workout-demo" aria-labelledby="workout-demo-title">
         <div>
-            <p class="section-kicker">DEIN KLEINES BACKEND-TOOL</p>
-            <h2 id="exercise-tool-title">Übungen speichern</h2>
-            <p>Hier kannst du eine Übung an dein bestehendes Python-Fitness-Backend schicken. Die Liste darunter wird automatisch geladen.</p>
+            <p class="section-kicker">ZUM AUSPROBIEREN</p>
+            <h2 id="workout-demo-title">Stell dein Workout zusammen.</h2>
+            <p>Wähle einen Schwerpunkt. Der Generator zieht drei verschiedene Übungen aus derselben Liste wie im Python-Beispiel.</p>
         </div>
-        <div class="exercise-tool-form" id="exercise-form">
-            <label for="titleInput">Übungsname</label>
-            <input type="text" id="titleInput" placeholder="z. B. Tiefe Hocke">
-            <label for="categoryInput">Kategorie</label>
-            <input type="text" id="categoryInput" placeholder="z. B. Mobility">
-            <button id="addBtn" type="button">Übung hinzufügen</button>
-            <div id="output" aria-live="polite"></div>
-        </div>
+        <form class="workout-form" id="workout-form">
+            <label for="workout-focus">Schwerpunkt</label>
+            <select id="workout-focus" name="schwerpunkt">
+                <option value="mobility">Mobility</option>
+                <option value="kraft">Kraft</option>
+            </select>
+            <button type="submit">Workout erstellen</button>
+            <div aria-live="polite" aria-atomic="true">
+                <ol class="workout-result" id="workout-result" aria-label="Dein Workout" hidden></ol>
+            </div>
+        </form>
     </section>
 </main>
 
@@ -132,5 +142,6 @@ for uebung in workout:
 </footer>
 
 <script src="../script.js?v=20261120-1"></script>
+<script src="workout-generator.js?v=20261121-1"></script>
 </body>
 </html>
