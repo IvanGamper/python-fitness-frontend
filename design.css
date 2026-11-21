@@ -196,7 +196,7 @@ body.content-page {
     clip-path: none;
 }
 
-.home-page :is(main > section[id], #top, #newsletter) {
+.home-page :is(main > section[id], #top, #newsletter, #kontakt) {
     scroll-margin-top: var(--pf-nav-height);
 }
 
