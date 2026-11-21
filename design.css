@@ -1,0 +1,730 @@
+/* PYTHON FITNESS · Farben, Typografie und Layout der Website */
+
+:root {
+    --pf-background: #0a0a0a;
+    --pf-surface: #161616;
+    --pf-text: #fff;
+    --pf-muted: #c6c6c6;
+    --pf-line: #3c3c3c;
+    --pf-yellow: #ffe500;
+    --pf-width: 76rem;
+    --pf-gutter: clamp(1.25rem, 4vw, 3rem);
+    --pf-section-space: clamp(3.5rem, 7vw, 7rem);
+    --pf-nav-height: 78px;
+    --pf-title-font: "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+    background: var(--pf-background);
+    color: var(--pf-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+main {
+    display: block;
+}
+
+body.home-page {
+    padding-top: var(--pf-nav-height);
+}
+
+body.code-page,
+body.content-page {
+    padding-top: 0;
+    background: var(--pf-background);
+    color: var(--pf-text);
+}
+
+:where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--pf-yellow);
+    outline-offset: 3px;
+}
+
+/* Navigation: dieselben Links für Desktop und Seitenmenü */
+
+.hero-nav,
+.code-page .hero-nav {
+    background: var(--pf-background);
+    border-bottom: 1px solid var(--pf-line);
+}
+
+.hero-nav .nav-brand:hover,
+.hero-nav .nav-brand:focus-visible,
+.hero-nav .nav-panel .nav-panel-links a:hover,
+.hero-nav .nav-panel .nav-panel-links a:focus-visible,
+.hero-nav .nav-panel .nav-panel-secondary a:hover,
+.hero-nav .nav-panel .nav-panel-secondary a:focus-visible {
+    color: var(--pf-yellow);
+}
+
+.hero-nav .nav-panel-header {
+    color: var(--pf-yellow);
+}
+
+.hero-nav .nav-panel .nav-panel-cta {
+    border-radius: 0;
+    background: var(--pf-yellow);
+    color: var(--pf-background);
+}
+
+.hero-nav .nav-panel .nav-panel-cta:hover,
+.hero-nav .nav-panel .nav-panel-cta:focus-visible {
+    background: var(--pf-text);
+}
+
+.page-title-band {
+    box-sizing: border-box;
+    padding: clamp(2rem, 5vw, 4.25rem) var(--pf-gutter);
+    background: var(--pf-yellow);
+    color: var(--pf-background);
+    text-align: center;
+}
+
+.page-title-band h1,
+.home-page .hero .page-title-band h1 {
+    max-width: var(--pf-width);
+    margin: 0 auto;
+    font: 800 clamp(1.9rem, 4.35vw, 4.5rem) / 1.02 var(--pf-title-font);
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.page-title-band > p {
+    max-width: 48ch;
+    margin: 1rem auto 0;
+}
+
+.home-page .hero,
+.code-page .code-hero {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    background: var(--pf-background);
+}
+
+.home-page .hero-content,
+.code-page .code-hero-content {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(1.5rem, 5vw, 5rem);
+    width: 100%;
+    max-width: calc(var(--pf-width) + 2 * var(--pf-gutter));
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem) var(--pf-gutter);
+}
+
+.home-page .hero-copy h2,
+.code-page .code-hero-box h2 {
+    margin: 0 0 1.35rem;
+    font: 800 clamp(2.35rem, 5.25vw, 5rem) / 1.02 var(--pf-title-font);
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+}
+
+.home-page .hero-copy p:not(.eyebrow),
+.code-page .code-hero-box p {
+    max-width: 42ch;
+    margin: 0 0 1.6rem;
+    color: var(--pf-muted);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+.home-page .eyebrow,
+.home-page .coming-label,
+.code-page .section-kicker {
+    color: var(--pf-yellow);
+    font-size: 0.875rem;
+    letter-spacing: 0.12em;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem 1.5rem;
+}
+
+.hero-secondary,
+.home-page .about-link,
+.code-page .code-demo-link,
+.code-page .code-footer a {
+    width: fit-content;
+    color: var(--pf-yellow);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.hero-secondary:hover,
+.home-page .about-link:hover,
+.code-page .code-demo-link:hover,
+.code-page .code-footer a:hover {
+    color: var(--pf-text);
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 8 / 9;
+    overflow: hidden;
+    border-bottom: 4px solid var(--pf-yellow);
+}
+
+/* Die linke Hälfte der vorhandenen Collage ist das Handstand-Foto. */
+.hero-image img {
+    display: block;
+    width: 200%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10, 10, 10, 0.3), transparent 46%);
+    pointer-events: none;
+}
+
+/* Startseite: wiederkehrende Abstände und eine gemeinsame Kartenoptik */
+
+.home-page main > section {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: var(--pf-section-space) max(var(--pf-gutter), calc((100% - var(--pf-width)) / 2));
+    border-top: 1px solid var(--pf-line);
+    background: var(--pf-background);
+    box-shadow: none;
+    clip-path: none;
+}
+
+.home-page main > section[id],
+.home-page #top {
+    scroll-margin-top: var(--pf-nav-height);
+}
+
+.home-page :is(.skills-section, .offer-section, .newsletter-section) {
+    background: #101010;
+}
+
+.home-page .section-intro {
+    max-width: 48rem;
+    margin: 0 0 clamp(1.75rem, 4vw, 3.25rem);
+    text-align: left;
+}
+
+.home-page .section-intro h2,
+.home-page .about-text h2,
+.home-page :is(.contact-content, .newsletter-content, .feedback-content) h2 {
+    max-width: 21ch;
+    margin: 0 0 1rem;
+    color: var(--pf-text);
+    font: 800 clamp(2rem, 4.5vw, 4.2rem) / 1.04 var(--pf-title-font);
+    letter-spacing: -0.045em;
+}
+
+.home-page :is(.section-intro, .about-text, .newsletter-content, .feedback-content) p:not(.eyebrow) {
+    color: var(--pf-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.home-page :is(.target-cards, .skills-grid, .process-grid, .offer-main-grid, .coming-soon) {
+    max-width: none;
+    margin-inline: 0;
+}
+
+.home-page :is(.target-cards, .skills-grid, .process-grid, .offer-main-grid) {
+    gap: 1rem;
+}
+
+.home-page :is(.target-card, .skill-card, .process-card, .main-offer-card) {
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    border: 1px solid var(--pf-line);
+    border-radius: 0;
+    background: var(--pf-surface);
+    color: var(--pf-text);
+}
+
+.home-page .target-card:hover {
+    transform: none;
+}
+
+.home-page .skill-card.featured {
+    border-top: 3px solid var(--pf-yellow);
+}
+
+.home-page :is(.target-card, .skill-card, .process-card, .main-offer-card) h3 {
+    color: var(--pf-text);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.home-page :is(.target-card, .skill-card, .process-card, .main-offer-card) p,
+.home-page .main-offer-card li {
+    color: var(--pf-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.home-page .skill-label,
+.home-page .process-number,
+.code-page .code-step-number {
+    border-radius: 0;
+    background: var(--pf-yellow);
+    color: var(--pf-background);
+}
+
+.home-page .skill-label {
+    padding: 0.25rem 0.55rem;
+    font-size: 0.75rem;
+}
+
+.home-page .about {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 6rem);
+}
+
+.home-page :is(.about-image, .about-text) {
+    grid-area: auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.home-page .about-image::after {
+    display: none;
+}
+
+.home-page .about-image img {
+    aspect-ratio: 5 / 6;
+    border-radius: 0;
+}
+
+.home-page .about-text strong {
+    color: var(--pf-text);
+}
+
+.home-page .about-stat strong {
+    color: var(--pf-yellow);
+}
+
+.home-page .about-stat span,
+.home-page .coming-grid p {
+    color: var(--pf-muted);
+}
+
+.home-page .about-link {
+    padding: 0;
+    border: 0;
+}
+
+.home-page .main-offer-card li::before {
+    content: "•";
+    color: var(--pf-yellow);
+}
+
+.home-page .coming-soon {
+    border-color: var(--pf-line);
+}
+
+.home-page .coming-grid h3 {
+    color: var(--pf-text);
+}
+
+.home-page .proof-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.home-page .proof-section .section-intro {
+    margin-bottom: 0;
+}
+
+.home-page .proof-section .section-intro .eyebrow {
+    color: var(--pf-yellow);
+}
+
+.home-page .contact-section {
+    background: var(--pf-yellow);
+    color: var(--pf-background);
+    text-align: left;
+}
+
+.home-page .contact-content {
+    max-width: none;
+}
+
+.home-page .contact-section :is(h2, p:not(.eyebrow), .eyebrow, .contact-note) {
+    margin-inline: 0;
+    color: var(--pf-background);
+}
+
+.home-page .contact-section :focus-visible {
+    outline-color: var(--pf-background);
+}
+
+.home-page :is(.newsletter-content, .feedback-content) {
+    max-width: 44rem;
+}
+
+.home-page :is(#signup-form, #feedback-form),
+.content-page #login-form {
+    display: grid;
+    max-width: 35rem;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+}
+
+.home-page :is(#signup-form, #feedback-form) label,
+.content-page #login-form label,
+.code-page .workout-form label {
+    color: var(--pf-text);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.home-page :is(#signup-form, #feedback-form) :is(input, select, textarea),
+.content-page #login-form input,
+.code-page .workout-form select {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #777;
+    border-radius: 0;
+    background: var(--pf-surface);
+    color: var(--pf-text);
+    font: inherit;
+}
+
+.home-page #feedback-form select,
+.code-page .workout-form select {
+    appearance: none;
+    padding-right: 2.5rem;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #fff 50%),
+        linear-gradient(135deg, #fff 50%, transparent 50%);
+    background-position: calc(100% - 1.2rem) 52%, calc(100% - 0.85rem) 52%;
+    background-size: 0.35rem 0.35rem;
+    background-repeat: no-repeat;
+}
+
+.home-page :is(.primary-button, .offer-button, .instagram-button, .whatsapp-button, form button),
+.code-page :is(.code-hero-button, .workout-form button),
+.content-page :is(.action-link, #login-form button) {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 3rem;
+    padding: 0.7rem 1.15rem;
+    border: 1px solid transparent;
+    border-radius: 0;
+    background: var(--pf-yellow);
+    color: var(--pf-background);
+    font: inherit;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.home-page :is(.primary-button, .offer-button, .instagram-button, form button):hover,
+.code-page :is(.code-hero-button, .workout-form button):hover,
+.content-page :is(.action-link, #login-form button):hover {
+    background: var(--pf-text);
+}
+
+.home-page .whatsapp-button {
+    background: var(--pf-background);
+    color: var(--pf-text);
+}
+
+.home-page .whatsapp-button:hover {
+    background: var(--pf-text);
+    color: var(--pf-background);
+    transform: none;
+}
+
+.home-page :is(.contact-note, .footer-location, .footer-column span) {
+    color: var(--pf-muted);
+}
+
+.home-page .site-footer,
+.code-page .code-footer {
+    border-top: 1px solid var(--pf-line);
+    background: var(--pf-background);
+    color: var(--pf-muted);
+}
+
+.home-page :is(.footer-brand h2, .footer-column h3, .footer-column a, .footer-bottom a) {
+    color: var(--pf-text);
+}
+
+.home-page :is(.footer-column a, .footer-bottom a):hover {
+    color: var(--pf-yellow);
+}
+
+.home-page .footer-column a {
+    overflow-wrap: anywhere;
+}
+
+.home-page .cookie-banner {
+    box-sizing: border-box;
+    inset: auto var(--pf-gutter) 1rem auto;
+    width: min(calc(100% - 2 * var(--pf-gutter)), 31rem);
+    max-height: 55dvh;
+    overflow: auto;
+    border: 1px solid var(--pf-line);
+    border-radius: 0;
+    background: var(--pf-surface);
+    color: var(--pf-text);
+}
+
+.home-page.menu-open .cookie-banner {
+    visibility: hidden;
+}
+
+.home-page .cookie-content {
+    padding: 1rem 1.25rem;
+}
+
+.home-page .cookie-actions {
+    flex-direction: row;
+    gap: 0.65rem;
+    margin-top: 0.85rem;
+}
+
+.home-page .cookie-button {
+    width: auto;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.9rem;
+}
+
+.home-page .cookie-content :is(h3, p) {
+    color: var(--pf-text);
+}
+
+.home-page .cookie-content a {
+    color: var(--pf-yellow);
+}
+
+.home-page .cookie-button.accept {
+    border-radius: 0;
+    background: var(--pf-yellow);
+    color: var(--pf-background);
+}
+
+.home-page .cookie-button.reject {
+    border: 1px solid #777;
+    border-radius: 0;
+    background: transparent;
+    color: var(--pf-text);
+}
+
+/* Coden & Lernen */
+
+.code-page .code-hero-box {
+    box-sizing: border-box;
+    width: auto;
+    padding: 0;
+    background: transparent;
+}
+
+.code-hero-image {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    border-bottom: 4px solid var(--pf-yellow);
+    background: url("images/hero.jpg") right center / 200% auto no-repeat #1d1d1d;
+}
+
+.code-page .code-main {
+    width: min(calc(100% - 2 * var(--pf-gutter)), var(--pf-width));
+    padding: var(--pf-section-space) 0;
+}
+
+.code-page .code-projects {
+    gap: 1rem;
+    background: transparent;
+}
+
+.code-page .code-project-card,
+.code-page .code-project-card:nth-child(2),
+.code-page .code-article,
+.code-page .code-tool-panel {
+    min-height: 0;
+    border: 1px solid var(--pf-line);
+    background: var(--pf-surface);
+}
+
+.code-page .code-project-card {
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.code-page :is(.code-intro > p:not(.section-kicker), .code-project-card p, .code-step p) {
+    color: var(--pf-muted);
+}
+
+.code-page :is(.code-article-heading, .code-step) {
+    border-color: var(--pf-line);
+}
+
+.code-page pre,
+.code-page :not(pre) > code {
+    background: #0a0a0a;
+    color: #fff4a0;
+}
+
+.code-page .code-tip,
+.code-page .workout-result {
+    border-color: var(--pf-yellow);
+    background: var(--pf-background);
+    color: var(--pf-text);
+}
+
+/* Gemeinsamer Rahmen für Coaching, Blog, Fitness und Serviceseiten */
+
+.content-page .subpage-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.7rem 1.25rem;
+    box-sizing: border-box;
+    padding: 1.2rem max(var(--pf-gutter), calc((100% - var(--pf-width)) / 2));
+    border-bottom: 1px solid var(--pf-line);
+}
+
+.subpage-nav a {
+    color: var(--pf-text);
+}
+
+.subpage-nav a:hover {
+    color: var(--pf-yellow);
+}
+
+.subpage-nav .subpage-brand {
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.content-page :is(main, .login-section) {
+    box-sizing: border-box;
+    width: min(100% - 2 * var(--pf-gutter), 54rem);
+    margin: 0 auto;
+    padding: var(--pf-section-space) 0;
+}
+
+.content-page .login-section {
+    max-width: 32rem;
+}
+
+.content-page :is(main, .login-section) a:not(.action-link) {
+    color: var(--pf-yellow);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.content-page :is(main, .login-section) a:not(.action-link):hover {
+    color: var(--pf-text);
+}
+
+.content-page main :is(p, li) {
+    color: var(--pf-muted);
+    overflow-wrap: anywhere;
+}
+
+.content-page main h2 {
+    margin-top: 2rem;
+    font: 800 clamp(1.5rem, 3vw, 2.5rem) / 1.1 var(--pf-title-font);
+    letter-spacing: -0.03em;
+}
+
+.content-page main > :is(article, section) {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--pf-line);
+    margin-bottom: 1.5rem;
+}
+
+.content-page .login-section > a {
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+.coaching-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 2.5rem 0;
+}
+
+.coaching-options article {
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid var(--pf-line);
+    background: var(--pf-surface);
+}
+
+.content-page .coaching-options h2 {
+    margin-top: 0;
+}
+
+.content-page footer {
+    padding: 1.25rem var(--pf-gutter);
+    border-top: 1px solid var(--pf-line);
+    color: var(--pf-muted);
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .home-page .hero-content,
+    .code-page .code-hero-content,
+    .home-page .about,
+    .home-page .proof-section,
+    .coaching-options {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        max-width: 33rem;
+    }
+
+    .code-hero-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .code-page .code-step {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .nav-panel,
+    .nav-backdrop {
+        transition: none;
+    }
+}
