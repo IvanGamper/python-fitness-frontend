@@ -87,6 +87,27 @@ body.code-page {
     padding-inline: var(--pf-gutter);
 }
 
+.site-nav > .nav-brand {
+    margin-inline-end: auto;
+}
+
+.site-nav .nav-instagram {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--pf-dark-text);
+}
+
+.site-nav .nav-instagram:is(:hover, :focus-visible) {
+    background: var(--pf-dark-surface);
+    color: var(--pf-accent);
+}
+
 .site-nav .nav-panel-links a[aria-current="page"] {
     text-decoration: underline;
     text-underline-offset: 0.28em;
