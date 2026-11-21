@@ -47,6 +47,16 @@ body.site-page {
     padding-top: var(--pf-nav-height);
 }
 
+/* Schiebt die Fußzeile bei wenig Inhalt bis zum unteren Fensterrand. */
+body.site-page,
+body.code-page {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
 :where(a, button, input, select, textarea):focus-visible {
     outline: 2px solid var(--pf-link);
     outline-offset: 3px;
@@ -177,8 +187,7 @@ body.site-page {
 .hero-secondary,
 .home-page .offer-button,
 .home-page .about-link,
-.code-page .code-demo-link,
-.code-page .code-footer a {
+.code-page .code-demo-link {
     width: fit-content;
     text-decoration: underline;
     text-underline-offset: 0.24em;
@@ -311,8 +320,7 @@ body.site-page {
 }
 
 .home-page .about-link,
-.code-page .code-demo-link,
-.code-page .code-footer a {
+.code-page .code-demo-link {
     padding: 0;
     border: 0;
     color: var(--pf-link);
@@ -498,27 +506,101 @@ body.site-page {
     color: var(--pf-ink);
 }
 
-.home-page .site-footer,
-.content-page footer {
-    border-top: 1px solid var(--pf-dark-line);
-    background: var(--pf-dark);
-    color: var(--pf-dark-muted);
+/* Gemeinsame Fußzeile */
+
+.shared-footer {
+    margin-top: auto;
+    padding: clamp(2rem, 4vw, 3rem) var(--pf-gutter) 1.25rem;
+    border-top: 1px solid var(--pf-line);
+    background: var(--pf-soft);
+    color: var(--pf-ink);
+    text-align: left;
 }
 
-.home-page :is(.footer-brand h2, .footer-column h3, .footer-column a, .footer-bottom a) {
-    color: var(--pf-dark-text);
+.shared-footer-columns,
+.shared-footer-bottom {
+    max-width: var(--pf-width);
+    margin-inline: auto;
 }
 
-.home-page :is(.footer-column a, .footer-bottom a):hover {
-    color: var(--pf-accent);
+.shared-footer-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
 }
 
-.home-page :is(.footer-location, .footer-column span, .footer-bottom p) {
-    color: var(--pf-dark-muted);
+.shared-footer h2 {
+    margin: 0 0 0.55rem;
+    font-size: 1.125rem;
+    line-height: 1.3;
 }
 
-.home-page .footer-column a {
+.shared-footer p {
+    margin: 0;
+}
+
+.shared-footer-brand p + p {
+    margin-top: 0.45rem;
+}
+
+.shared-footer ul {
+    display: grid;
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.shared-footer a {
+    color: var(--pf-link);
     overflow-wrap: anywhere;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.shared-footer a:hover {
+    color: var(--pf-ink);
+}
+
+.shared-footer h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.shared-footer h2 a:hover {
+    text-decoration: underline;
+}
+
+.shared-footer #kontakt {
+    scroll-margin-top: calc(var(--pf-nav-height) + 1rem);
+}
+
+.shared-footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 1.25rem;
+    margin-top: clamp(1.5rem, 4vw, 2.75rem);
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--pf-line);
+    color: var(--pf-muted);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 760px) {
+    .shared-footer-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .shared-footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .shared-footer-columns {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 /* Cookie-Hinweis */
@@ -698,12 +780,6 @@ body.site-page {
     color: var(--pf-ink);
 }
 
-.code-page .code-footer {
-    border-top: 1px solid var(--pf-line);
-    background: var(--pf-soft);
-    color: var(--pf-muted);
-}
-
 .content-page main {
     box-sizing: border-box;
     width: min(calc(100% - 2 * var(--pf-gutter)), 54rem);
@@ -759,11 +835,6 @@ body.site-page {
 
 .content-page .coaching-options h2 {
     margin-top: 0;
-}
-
-.content-page footer {
-    padding: 1.25rem var(--pf-gutter);
-    text-align: center;
 }
 
 @media (max-width: 800px) {
