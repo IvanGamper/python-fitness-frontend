@@ -78,3 +78,95 @@
         border-top: 1px solid var(--pf-line);
     }
 }
+
+.content-page .movement-main {
+    width: min(calc(100% - 2 * var(--pf-gutter)), 63rem);
+}
+
+.content-page .movement-main > .movement-article {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.movement-row {
+    display: grid;
+    grid-template-areas: "text photos";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.25rem, 5vw, 4rem);
+}
+
+.movement-row:nth-child(even) {
+    grid-template-areas: "photos text";
+}
+
+.movement-row + .movement-row,
+.movement-conclusion {
+    margin-top: clamp(1.75rem, 5vw, 3.5rem);
+    padding-top: clamp(1.75rem, 5vw, 3.5rem);
+    border-top: 1px solid var(--pf-line);
+}
+
+.movement-copy {
+    grid-area: text;
+}
+
+.content-page .movement-copy h2 {
+    margin: 0 0 0.85rem;
+}
+
+.movement-copy p {
+    margin: 0 0 0.85rem;
+}
+
+.movement-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.movement-author {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.movement-photos {
+    grid-area: photos;
+    margin: 0;
+}
+
+.movement-photos img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.movement-photos-narrow {
+    width: min(100%, 21rem);
+    justify-self: center;
+}
+
+.movement-portrait {
+    width: min(100%, 15rem);
+    justify-self: center;
+}
+
+.movement-photo-pair {
+    display: grid;
+    grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.movement-conclusion p {
+    max-width: 65ch;
+    margin-top: 0;
+}
+
+@media (max-width: 760px) {
+    .movement-row,
+    .movement-row:nth-child(even) {
+        grid-template-areas: "text" "photos";
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
