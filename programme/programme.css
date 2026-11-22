@@ -1,0 +1,68 @@
+.content-page .programmes-main {
+    width: min(calc(100% - 2 * var(--pf-gutter)), 63rem);
+}
+
+.content-page .programmes-main section > h2 {
+    margin-top: 0;
+}
+
+.programme-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 1.75rem);
+}
+
+.programme-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--pf-line);
+    border-radius: 12px;
+    background: var(--pf-paper);
+}
+
+.programme-card > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+}
+
+.programme-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: clamp(1.15rem, 3vw, 1.65rem);
+}
+
+.programme-card-body :is(h3, p, ul) {
+    margin: 0;
+}
+
+.programme-card-body h3 {
+    font: 750 clamp(1.35rem, 2.7vw, 1.9rem) / 1.15 system-ui, sans-serif;
+    letter-spacing: -0.03em;
+}
+
+.programme-meta {
+    font-size: 0.875rem;
+    font-weight: 650;
+}
+
+.programme-card-body ul {
+    padding-inline-start: 1.25rem;
+}
+
+.programme-card-body .action-link {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+@media (max-width: 760px) {
+    .programme-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
