@@ -3,80 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Python Fitness Lab: kleine Python-Projekte für Training und Bewegung.">
-    <title>Coden & Lernen – Python Fitness</title>
+    <meta name="description" content="Erstelle ein Flexibility-, Conditioning- oder Pump-Workout passend zu deiner Zeit und deinem Equipment.">
+    <title>Workout-Generator – Python Fitness</title>
     <link rel="stylesheet" href="../style.css?v=20261206-1">
-    <link rel="stylesheet" href="../design.css?v=footer-1">
+    <link rel="stylesheet" href="../design.css?v=instagram-1">
+    <link rel="stylesheet" href="workout.css?v=2">
 </head>
-<body class="code-page">
+<body class="code-page site-page workout-page">
 
-<nav class="hero-nav" aria-label="Hauptnavigation">
-    <a class="nav-brand" href="../index.html#top" aria-label="Python Fitness Startseite">PYTHON FITNESS</a>
-    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-panel">
-        <span></span><span></span><span></span>
+<nav class="hero-nav site-nav" aria-label="Hauptnavigation">
+    <a class="nav-brand" href="../index.html#top" aria-label="Python Fitness Startseite">
+        PYTHON FITNESS
+    </a>
+
+    <button
+            id="nav-toggle"
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+            aria-label="Menü öffnen"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
 
-    <div class="nav-panel" id="nav-panel">
+    <div id="nav-panel" class="nav-panel">
         <div class="nav-panel-header">
             <span>MENÜ</span>
-            <button class="nav-close" id="nav-close" type="button" aria-label="Menü schließen">×</button>
+            <button id="nav-close" class="nav-close" type="button" aria-label="Menü schließen">×</button>
         </div>
+
         <div class="nav-panel-links">
-            <a href="../index.html#skills">Skills</a>
-            <a href="../index.html#ueber-ivan">Über Ivan</a>
-            <a href="../index.html#angebot">Angebot</a>
-        </div>
-        <div class="nav-panel-secondary">
+            <a href="../programme/index.html">Programme</a>
             <a href="../coaching/index.html">Coaching</a>
-            <a href="index.html">Coden &amp; Lernen</a>
-            <a href="#workout-generator">Workout-Generator</a>
+            <a href="../about/index.html" lang="en">About</a>
+            <a href="index.html" aria-current="page">Workout-Generator</a>
         </div>
-        <a class="nav-panel-cta" href="https://wa.me/4915754977206?text=Hallo%20Ivan%2C%20ich%20interessiere%20mich%20f%C3%BCr%20dein%20Coaching." target="_blank" rel="noopener">Kostenloses Erstgespräch</a>
     </div>
+
+    <a class="nav-instagram" href="https://www.instagram.com/vanja_gamper/"
+       target="_blank" rel="noopener noreferrer" aria-label="Python Fitness auf Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.8" aria-hidden="true" focusable="false">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1.15" fill="currentColor" stroke="none"></circle>
+        </svg>
+    </a>
 </nav>
 <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
-<header class="code-hero">
-    <div class="page-title-band">
-        <h1>Coden &amp; Lernen</h1>
-    </div>
-    <div class="code-hero-content">
-        <div class="code-hero-box">
-            <h2>Code, der dein Training einfacher macht.</h2>
-            <p>Hier lernst du mit kleinen Python-Projekten, wie aus einer Idee ein hilfreiches Tool für dein Training wird.</p>
-            <a class="code-hero-button" href="#workout-generator">Workout-Generator lernen</a>
-        </div>
-        <div class="code-hero-image" aria-hidden="true"></div>
-    </div>
+<header class="page-title-band">
+    <h1>Workout-Generator</h1>
 </header>
 
-<main class="code-main">
-    <section class="code-intro" aria-labelledby="code-intro-title">
-        <p class="section-kicker">CODEN &amp; LERNEN</p>
-        <h2 id="code-intro-title">Python als Werkzeug für Training &amp; Motivation.</h2>
-        <p>Kein trockener Kurs. Wir bauen kleine, verständliche Programme, die dir beim Planen, Dokumentieren und Trainieren helfen.</p>
-    </section>
+<main class="code-main" id="workout-generator">
+    <form class="workout-form" id="workout-form" aria-label="Workout-Einstellungen">
+        <div class="workout-fields" id="workout-demo">
+            <div>
+                <label for="workout-focus">Workout-Art</label>
+                <select id="workout-focus" name="art">
+                    <option value="flexibility">Flexibility</option>
+                    <option value="metcon">Metabolic Conditioning</option>
+                    <option value="pump">Pump</option>
+                </select>
+            </div>
 
-    <section class="code-projects" aria-label="Mögliche Projekte">
-        <article class="code-project-card"><h3>Workout-Generator</h3><p>Stellt dir aus deinen Übungen automatisch eine passende Trainingseinheit zusammen.</p></article>
-        <article class="code-project-card"><h3>Training Log</h3><p>Speichert Training, Wiederholungen und kleine Fortschritte an einem Ort.</p></article>
-        <article class="code-project-card"><h3>Mobility Timer</h3><p>Gibt dir eine ruhige Struktur für deine Beweglichkeits-Routine.</p></article>
-    </section>
+            <div>
+                <label for="workout-duration">Dauer in Minuten</label>
+                <input id="workout-duration" name="dauer" type="number" min="10" max="60" step="1"
+                       value="20" aria-describedby="workout-duration-hint" required>
+                <small id="workout-duration-hint">10 bis 60 Minuten, inklusive Pausen.</small>
+            </div>
 
-    <article class="code-article" id="workout-generator">
-        <div class="code-article-heading">
-            <p class="section-kicker">SCHRITT FÜR SCHRITT</p>
-            <h2>Einen Workout-Generator mit Python coden.</h2>
-            <p>Unser erstes Projekt wählt zufällig Übungen aus einer Liste aus. So entsteht mit wenigen Zeilen ein kleines Workout.</p>
-            <a class="code-demo-link" href="#workout-demo">Generator ausprobieren</a>
+            <div>
+                <label for="workout-shoulder">Schulterbelastung</label>
+                <select id="workout-shoulder" name="schulter">
+                    <option value="nein">Ohne gezielte Schulterbelastung</option>
+                    <option value="ja">Schulterübungen möglich</option>
+                </select>
+            </div>
         </div>
 
-        <section class="code-step">
-            <div class="code-step-number">1</div>
-            <div>
-                <h3>Übungen sammeln</h3>
-                <p>Wir legen zuerst fest, welche Übungen zu welchem Fokus gehören. Ein Dictionary ist dafür praktisch: links steht der Fokus, rechts die passende Liste.</p>
-                <pre><code>UEBUNGEN = {
+        <fieldset class="workout-equipment">
+            <legend>Verfügbares Equipment</legend>
+            <p>Wähle aus, was du da hast. Ohne Auswahl trainierst du mit Körpergewicht.</p>
+            <div class="workout-equipment-options">
+                <label><input type="checkbox" name="equipment" value="hanteln"> Kurzhanteln</label>
+                <label><input type="checkbox" name="equipment" value="band"> Miniband</label>
+                <label><input type="checkbox" name="equipment" value="kettlebell"> Kettlebell</label>
+                <label><input type="checkbox" name="equipment" value="stuhl"> Stabiler Stuhl</label>
+                <label><input type="checkbox" name="equipment" value="kabel"> Kabelzug</label>
+                <label><input type="checkbox" name="equipment" value="rad"> Ergometer</label>
+            </div>
+        </fieldset>
+
+        <button type="submit">Workout erstellen</button>
+        <noscript><p>Aktiviere JavaScript, um dein Workout zu erstellen.</p></noscript>
+    </form>
+
+    <section class="workout-result" id="workout-result" aria-labelledby="workout-result-title" hidden>
+        <h2 id="workout-result-title" tabindex="-1">Dein Workout</h2>
+        <p id="workout-summary" class="workout-summary"></p>
+        <ol class="workout-phases">
+            <li>
+                <h3 id="workout-warmup"></h3>
+                <p>Geh locker auf der Stelle und bewege Hüften und Sprunggelenke mit kleinen, kontrollierten Bewegungen.</p>
+            </li>
+            <li>
+                <h3 id="workout-main-time"></h3>
+                <p id="workout-timing"></p>
+                <p id="workout-rounds"></p>
+                <ol id="workout-exercises" class="workout-exercises"></ol>
+                <p id="workout-extra-rest" hidden></p>
+            </li>
+            <li>
+                <h3 id="workout-cooldown"></h3>
+                <p>Geh locker aus, bis deine Atmung ruhiger wird.</p>
+            </li>
+        </ol>
+    </section>
+
+    <details class="workout-python-example">
+        <summary>Python-Beispiel zum Grundprinzip</summary>
+        <article class="code-article">
+            <div class="code-article-heading">
+                <p class="section-kicker">SCHRITT FÜR SCHRITT</p>
+                <h2>Einen Workout-Generator mit Python coden.</h2>
+                <p>Unser erstes Projekt wählt zufällig Übungen aus einer Liste aus. So entsteht mit wenigen Zeilen ein kleines Workout.</p>
+                <a class="code-demo-link" href="#workout-demo">Generator ausprobieren</a>
+            </div>
+
+            <section class="code-step">
+                <div class="code-step-number">1</div>
+                <div>
+                    <h3>Übungen sammeln</h3>
+                    <p>Wir legen zuerst fest, welche Übungen zu welchem Fokus gehören. Ein Dictionary ist dafür praktisch: links steht der Fokus, rechts die passende Liste.</p>
+                    <pre><code>UEBUNGEN = {
     "mobility": [
         "Tiefe Hocke", "Cossack Squat", "World's Greatest Stretch",
         "90/90-Hüftwechsel", "Brustwirbelsäulen-Rotation"
@@ -86,56 +151,38 @@
         "Rückwärts-Ausfallschritt", "Glute Bridge"
     ]
 }</code></pre>
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <section class="code-step">
-            <div class="code-step-number">2</div>
-            <div>
-                <h3>Drei Übungen auswählen</h3>
-                <p>Mit <code>random.sample()</code> nimmt Python drei unterschiedliche Übungen aus der gewählten Liste. Die Funktion gibt das fertige Workout zurück.</p>
-                <pre><code>import random
+            <section class="code-step">
+                <div class="code-step-number">2</div>
+                <div>
+                    <h3>Drei Übungen auswählen</h3>
+                    <p>Mit <code>random.sample()</code> nimmt Python drei unterschiedliche Übungen aus der gewählten Liste. Die Funktion gibt das fertige Workout zurück.</p>
+                    <pre><code>import random
 
 def erstelle_workout(fokus, anzahl=3):
     passende_uebungen = UEBUNGEN[fokus]
     return random.sample(passende_uebungen, anzahl)</code></pre>
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <section class="code-step">
-            <div class="code-step-number">3</div>
-            <div>
-                <h3>Workout ausgeben</h3>
-                <p>Jetzt rufen wir die Funktion auf und zeigen jede Übung an. Beim nächsten Start kann die Auswahl anders ausfallen. Ändere <code>"mobility"</code> in <code>"kraft"</code>, um den Schwerpunkt zu wechseln.</p>
-                <pre><code>workout = erstelle_workout("mobility")
+            <section class="code-step">
+                <div class="code-step-number">3</div>
+                <div>
+                    <h3>Workout ausgeben</h3>
+                    <p>Jetzt rufen wir die Funktion auf und zeigen jede Übung an. Beim nächsten Start kann die Auswahl anders ausfallen. Ändere <code>"mobility"</code> in <code>"kraft"</code>, um den Schwerpunkt zu wechseln.</p>
+                    <pre><code>workout = erstelle_workout("mobility")
 
 print("Dein heutiges Workout:")
 for uebung in workout:
     print("-", uebung)</code></pre>
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <aside class="code-tip"><strong>Nächster Schritt:</strong> Ergänze eigene Kategorien wie <code>"handstand"</code> oder <code>"rücken"</code>. Du kannst später auch Wiederholungen, Zeiten oder Schwierigkeitsgrade hinzufügen.</aside>
-    </article>
-
-    <section class="code-tool-panel" id="workout-demo" aria-labelledby="workout-demo-title">
-        <div>
-            <p class="section-kicker">ZUM AUSPROBIEREN</p>
-            <h2 id="workout-demo-title">Stell dein Workout zusammen.</h2>
-            <p>Wähle einen Schwerpunkt. Der Generator zieht drei verschiedene Übungen aus derselben Liste wie im Python-Beispiel.</p>
-        </div>
-        <form class="workout-form" id="workout-form">
-            <label for="workout-focus">Schwerpunkt</label>
-            <select id="workout-focus" name="schwerpunkt">
-                <option value="mobility">Mobility</option>
-                <option value="kraft">Kraft</option>
-            </select>
-            <button type="submit">Workout erstellen</button>
-            <div aria-live="polite" aria-atomic="true">
-                <ol class="workout-result" id="workout-result" aria-label="Dein Workout" hidden></ol>
-            </div>
-        </form>
-    </section>
+            <aside class="code-tip"><strong>Nächster Schritt:</strong> Ergänze eigene Kategorien wie <code>"handstand"</code> oder <code>"rücken"</code>. Du kannst später auch Wiederholungen, Zeiten oder Schwierigkeitsgrade hinzufügen.</aside>
+        </article>
+    </details>
 </main>
 
 <footer class="shared-footer">
@@ -181,6 +228,6 @@ for uebung in workout:
 </footer>
 
 <script src="../script.js?v=20261206-1"></script>
-<script src="workout-generator.js?v=20261121-1"></script>
+<script src="workout-generator.js?v=20261122-1"></script>
 </body>
 </html>

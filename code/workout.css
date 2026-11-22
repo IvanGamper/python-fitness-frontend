@@ -1,0 +1,177 @@
+.workout-page .site-nav {
+    position: fixed;
+}
+
+.workout-page .code-main {
+    width: min(calc(100% - 2 * var(--pf-gutter)), 60rem);
+    padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+#workout-demo,
+#workout-result-title {
+    scroll-margin-top: calc(var(--pf-nav-height) + 1.25rem);
+}
+
+.workout-page .workout-form {
+    gap: 1.25rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--pf-line);
+    border-radius: 10px;
+    background: var(--pf-paper);
+    color: var(--pf-ink);
+}
+
+.workout-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.workout-fields label,
+.workout-fields small {
+    display: block;
+    margin: 0 0 0.3rem;
+}
+
+.workout-fields small {
+    margin: 0.3rem 0 0;
+    color: var(--pf-muted);
+}
+
+.workout-equipment {
+    min-width: 0;
+    margin: 0;
+    padding: 0.65rem 1rem 1rem;
+    border: 1px solid var(--pf-line);
+    border-radius: 6px;
+}
+
+.workout-equipment legend {
+    padding-inline: 0.35rem;
+    font-weight: 750;
+}
+
+.workout-equipment p {
+    margin: 0 0 0.65rem;
+    color: var(--pf-muted);
+    font-size: 0.9rem;
+}
+
+.workout-equipment-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem 1rem;
+}
+
+.workout-equipment label {
+    display: flex;
+    align-items: center;
+    min-height: 2.5rem;
+    gap: 0.55rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+#workout-form .workout-equipment input {
+    flex: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    accent-color: var(--pf-link);
+    cursor: pointer;
+}
+
+.workout-page .workout-form button {
+    margin: 0;
+}
+
+.workout-page .workout-form button:hover {
+    background: var(--pf-dark);
+    color: var(--pf-dark-text);
+}
+
+.workout-page .workout-result {
+    margin: 1.5rem 0 0;
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--pf-line);
+    border-radius: 10px;
+}
+
+.workout-result h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    letter-spacing: -0.035em;
+}
+
+.workout-summary {
+    margin: 0.5rem 0 1.25rem;
+    color: var(--pf-muted);
+}
+
+.workout-phases {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.workout-phases > li {
+    padding-top: 1rem;
+    border-top: 1px solid var(--pf-line);
+}
+
+.workout-page .workout-result h3 {
+    font-size: 1.15rem;
+    letter-spacing: normal;
+}
+
+.workout-phases p {
+    margin: 0.45rem 0 0;
+}
+
+.workout-exercises {
+    margin: 0.75rem 0 0;
+    padding-inline-start: 1.5rem;
+}
+
+.workout-exercises span {
+    display: block;
+    color: var(--pf-muted);
+    font-size: 0.9rem;
+}
+
+.workout-python-example {
+    margin-top: 2rem;
+}
+
+.workout-python-example summary {
+    color: var(--pf-link);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.workout-python-example .code-article {
+    margin-top: 1rem;
+}
+
+@media (max-width: 760px) {
+    .workout-fields {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .workout-equipment-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 380px) {
+    .workout-equipment-options {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .workout-page .workout-form button {
+        width: 100%;
+    }
+}
