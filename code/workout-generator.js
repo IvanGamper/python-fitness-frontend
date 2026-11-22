@@ -209,6 +209,7 @@ workoutFormular.addEventListener("submit", (event) => {
     extraPauseText.textContent = `Zum Abschluss des Hauptteils ${workout.extraPause} Min. extra Pause.`;
     ergebnis.hidden = false;
     titel.focus();
+    blendeSanftEin(ergebnis);
 });
 
 ladeUebungskatalog();

@@ -1,5 +1,22 @@
 const BACKEND_URL = "https://python-fitness-backend.onrender.com";
 
+const bewegungErlaubt = window.matchMedia("(prefers-reduced-motion: no-preference)");
+
+function blendeSanftEin(element) {
+    if (!bewegungErlaubt.matches || typeof element.animate !== "function") {
+        return;
+    }
+
+    element.getAnimations().find((animation) => animation.id === "sanft-einblenden")?.cancel();
+    element.animate(
+        [
+            { opacity: 0.35, transform: "translateY(10px)" },
+            { opacity: 1, transform: "translateY(0)" },
+        ],
+        { id: "sanft-einblenden", duration: 700, easing: "ease-out" },
+    );
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Seitliches Menü
     const toggle = document.getElementById("nav-toggle");
@@ -38,6 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 setMenuState(false);
             }
         });
+    }
+
+    // About-Bilder und Video beim ersten Scrollen in den sichtbaren Bereich einblenden.
+    const aboutMedien = document.querySelectorAll(".about-page .about-media");
+    if (aboutMedien.length && bewegungErlaubt.matches && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((eintraege) => {
+            eintraege.forEach((eintrag) => {
+                if (eintrag.isIntersecting) {
+                    blendeSanftEin(eintrag.target);
+                    observer.unobserve(eintrag.target);
+                }
+            });
+        });
+        aboutMedien.forEach((medium) => observer.observe(medium));
     }
 
     // Anmeldung für den Handstand-Guide

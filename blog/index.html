@@ -5,7 +5,8 @@
     <title>Blog – Python Fitness</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../design.css?v=instagram-1">
+    <link rel="stylesheet" href="../design.css?v=bewegung-1">
+    <link rel="stylesheet" href="blog.css?v=spalten-1">
 </head>
 <body class="content-page site-page">
 
@@ -38,6 +39,7 @@
             <a href="../coaching/index.html">Coaching</a>
             <a href="../about/index.html" lang="en">About</a>
             <a href="../code/index.html">Workout-Generator</a>
+            <a href="index.html" aria-current="page">Blog</a>
         </div>
     </div>
 
@@ -54,41 +56,57 @@
 
 <div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
 
-<header class="page-title-band">
-    <h1>Blog</h1>
-    <p>Gedanken, Training & der Aufbau von Python Fitness</p>
-</header>
+<main class="blog-main">
+    <div class="blog-posts">
+        <article class="blog-intro" aria-labelledby="blog-title">
+            <h1 id="blog-title">Blog</h1>
+            <p>
+                Hier schreibe ich über Krafttraining und Beweglichkeit. Ich teile Erfahrungen
+                aus meinem Training und Leben.
+            </p>
+        </article>
 
-<main>
+        <article>
+            <h2>
+                <a href="bodyrebuilding-teil-1.html">
+                    Bodyrebuilding – Teil 1: Warum Bodybuilding heilen kann
+                </a>
+            </h2>
+            <p>
+                Über Dysbalancen, Schmerzen und warum richtiges Krafttraining mehr heilt als Stretching.
+            </p>
+        </article>
 
-    <!-- ARTIKEL-LISTE -->
-    <article>
-        <h2>
-            <a href="bodyrebuilding-teil-1.html">
-                Bodyrebuilding – Teil 1: Warum Bodybuilding heilen kann
-            </a>
-        </h2>
-        <p>
-            Über Dysbalancen, Schmerzen und warum richtiges Krafttraining mehr heilt als Stretching.
-        </p>
-    </article>
+        <a href="../index.html">Zurück zur Startseite</a>
+    </div>
 
-    <!-- BLOG-BESCHREIBUNG -->
-    <article>
-        <h2>Über diesen Blog</h2>
-        <p>
-            Hier schreibe ich über Krafttraining, Beweglichkeit und den Aufbau
-            von Python Fitness.
-        </p>
-        <p>
-            Ehrlich, ruhig und ohne Hype.
-        </p>
-    </article>
-
-
-
-    <a href="../index.html">Zurück zur Startseite</a>
-
+    <aside class="medium-articles" aria-labelledby="medium-articles-title">
+        <h2 id="medium-articles-title">Meine Artikel auf Medium</h2>
+        <ul class="medium-article-list">
+            <li>
+                <article>
+                    <time datetime="2024-05-08">8. Mai 2024</time>
+                    <h3><a href="https://medium.com/@ivangamper1991/handstand-training-ist-etwas-f%C3%BCr-die-faulen-9a71b2957e9b">Handstand Training ist etwas für die Faulen!</a></h3>
+                    <p>Warum ich Handstand trainiere und was mich am einarmigen Handstand reizt.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <time datetime="2023-07-11">11. Juli 2023</time>
+                    <h3><a href="https://medium.com/@ivangamper1991/die-schultern-4951ffbcbabe">Überkopf Training fasziniert mich.</a></h3>
+                    <p>Ein persönlicher Blick auf meine Faszination für das Training über Kopf.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <time datetime="2023-01-20">20. Januar 2023</time>
+                    <h3><a href="https://medium.com/@ivangamper1991/mein-training-1397f6bc4909">Mein Training</a></h3>
+                    <p>Gedanken zum Oberkörpertraining und zum Umgang mit Schmerzen beim Training.</p>
+                </article>
+            </li>
+        </ul>
+        <a href="https://medium.com/@ivangamper1991">Zum Medium-Profil</a>
+    </aside>
 </main>
 
 <footer class="shared-footer">

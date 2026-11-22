@@ -119,6 +119,28 @@ body.code-page {
     }
 }
 
+@media (min-width: 1280px) and (prefers-reduced-motion: no-preference) {
+    .site-nav .nav-panel-links a:not([aria-current="page"]) {
+        position: relative;
+    }
+
+    .site-nav .nav-panel-links a:not([aria-current="page"])::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0.3rem;
+        height: 2px;
+        background: var(--pf-accent);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 200ms ease-out;
+        pointer-events: none;
+    }
+
+    .site-nav .nav-panel-links a:not([aria-current="page"]):is(:hover, :focus-visible)::after {
+        transform: scaleX(1);
+    }
+}
+
 .hero-nav .nav-panel-header,
 .hero-nav .nav-brand:is(:hover, :focus-visible),
 .hero-nav .nav-panel :is(.nav-panel-links, .nav-panel-secondary) a:is(:hover, :focus-visible) {
