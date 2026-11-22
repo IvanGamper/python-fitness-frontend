@@ -91,7 +91,14 @@ body.code-page {
     margin-inline-end: auto;
 }
 
-.site-nav .nav-instagram {
+.site-nav .nav-social {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 0.125rem;
+}
+
+.site-nav .nav-social-link {
     display: grid;
     flex: none;
     place-items: center;
@@ -103,7 +110,7 @@ body.code-page {
     color: var(--pf-dark-text);
 }
 
-.site-nav .nav-instagram:is(:hover, :focus-visible) {
+.site-nav .nav-social-link:is(:hover, :focus-visible) {
     background: var(--pf-dark-surface);
     color: var(--pf-accent);
 }
@@ -918,6 +925,21 @@ body.code-page {
 
     .home-page #signup-form button {
         width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-nav {
+        gap: 0.25rem;
+        padding-inline: 0.75rem;
+    }
+
+    .site-nav .nav-toggle {
+        width: 44px;
+    }
+
+    .site-nav .nav-social {
+        gap: 0;
     }
 }
 
