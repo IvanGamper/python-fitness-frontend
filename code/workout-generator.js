@@ -62,6 +62,49 @@ const workoutArten = {
     },
 };
 
+function istUebung(uebung) {
+    return uebung
+        && typeof uebung.name === "string" && uebung.name.trim().length > 0
+        && typeof uebung.hinweis === "string" && uebung.hinweis.trim().length > 0
+        && (uebung.equipment == null || Object.hasOwn(equipmentNamen, uebung.equipment))
+        && (uebung.schulter === undefined || typeof uebung.schulter === "boolean");
+}
+
+function istVollstaendigeListe(uebungen) {
+    if (!Array.isArray(uebungen) || !uebungen.every(istUebung)) {
+        return false;
+    }
+
+    const namen = new Set(uebungen.map((uebung) => uebung.name));
+    const ohneEquipment = uebungen.filter((uebung) => !uebung.equipment);
+    return namen.size === uebungen.length
+        && ohneEquipment.filter((uebung) => !uebung.schulter).length >= 3
+        && ohneEquipment.some((uebung) => uebung.schulter);
+}
+
+async function ladeUebungskatalog() {
+    const lokal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+    const apiBasis = lokal ? "http://127.0.0.1:8000" : BACKEND_URL;
+
+    try {
+        const response = await fetch(`${apiBasis}/workout-exercises`, {
+            signal: AbortSignal.timeout(12000),
+        });
+        if (!response.ok) {
+            return;
+        }
+
+        const katalog = await response.json();
+        for (const [art, workout] of Object.entries(workoutArten)) {
+            if (istVollstaendigeListe(katalog?.[art])) {
+                workout.uebungen = katalog[art];
+            }
+        }
+    } catch {
+        // Der Generator kann die mitgelieferte Übungsliste verwenden.
+    }
+}
+
 function zufallsauswahl(uebungen, anzahl) {
     const verfuegbar = [...uebungen];
     const auswahl = [];
@@ -167,3 +210,5 @@ workoutFormular.addEventListener("submit", (event) => {
     ergebnis.hidden = false;
     titel.focus();
 });
+
+ladeUebungskatalog();
